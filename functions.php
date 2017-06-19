@@ -73,10 +73,16 @@ add_action('wp_enqueue_scripts', 'allure_scripts');
 require_once('wp-bootstrap-navwalker.php');
 
 
+//Remove the search box and storefront site branding from the header of WooThemes Storefront theme
+
 function remove_sf_actions() {
 
 	remove_action( 'storefront_header', 'storefront_product_search', 40 );
 	remove_action( 'storefront_header', 'storefront_site_branding', 20 );
+	remove_action( 'storefront_footer', 'storefront_footer_widgets', 10 );
+	remove_action( 'storefront_footer', 'storefront_credit', 20 );
+	
+
 	
 
 }
@@ -211,6 +217,9 @@ add_action( 'init', 'remove_sf_actions' );
       </nav><!-- #site-navigation -->
 		<?php
 	}
+	
+	
+	
 
 
 
