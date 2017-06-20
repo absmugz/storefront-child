@@ -40,11 +40,17 @@ function allure_scripts() {
 	wp_enqueue_style('bootstrapthumbnail', get_stylesheet_directory_uri().'/assets/plugins/bootstrapthumbnail/bootstrap-thumbnail.css');
 	
 	wp_enqueue_style('style', get_stylesheet_directory_uri().'/assets/css/style.css');
-	wp_enqueue_style('default', get_stylesheet_directory_uri().'/assets/css/default.css');
+	//wp_enqueue_style('default', get_stylesheet_directory_uri().'/assets/css/default.css');
+	
+	wp_enqueue_style('default', get_stylesheet_directory_uri().'/assets/css/color-option-allure.css');
+	
 	
 
 	
 	// enqueue script
+	
+	wp_deregister_script('jquery');
+
 	wp_enqueue_script('jquery', get_stylesheet_directory_uri() .'/assets/js/jquery.min.js');
 	wp_enqueue_script('bootstrap', get_stylesheet_directory_uri().'/assets/plugins/bootstrap/js/bootstrap.min.js');
 	
@@ -78,9 +84,12 @@ require_once('wp-bootstrap-navwalker.php');
 function remove_sf_actions() {
 
 	remove_action( 'storefront_header', 'storefront_product_search', 40 );
+	remove_action( 'storefront_header', 'storefront_header_cart', 60 );
 	remove_action( 'storefront_header', 'storefront_site_branding', 20 );
 	remove_action( 'storefront_footer', 'storefront_footer_widgets', 10 );
 	remove_action( 'storefront_footer', 'storefront_credit', 20 );
+	remove_action( 'storefront_content_top', 'woocommerce_breadcrumb', 10 );
+	
 	
 
 	
@@ -91,7 +100,7 @@ add_action( 'init', 'remove_sf_actions' );
 
 	function storefront_primary_navigation() {
 		?>
-	<nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+		<nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
         <div class="container">
 
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -102,7 +111,9 @@ add_action( 'init', 'remove_sf_actions' );
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a>
+            <a class="navbar-brand" href="index.html"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="logo"></a>
+            
+            
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->

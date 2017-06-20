@@ -62,16 +62,16 @@ a,
 .innerWrapper h3 span,
 .innerWrapper .table-responsive .table tbody tr td:first-child,
 .reviewInfo .fa-quote-left {
-  color: #ec5598; }
+  color: #ee957a; }
 
 @media (min-width: 768px) {
   .navbar-default .navbar-nav > li > a:hover,
   .navbar-nav li.dropdown.megaDropMenu .dropdown-menu .list-unstyled li a:hover,
   .navbar-nav li.dropdown.singleDrop .dropdown-menu li a:hover {
-    color: #ec5598; } }
+    color: #ee957a; } }
 
 .countrySelect .sbOptions a:hover {
-  color: #ec5598 !important; }
+  color: #ee957a !important; }
 
 .btn-primary, .btn-primary:hover, .btn-primary:focus,
 .btn-primary.active, .btn-primary:active,
@@ -122,13 +122,13 @@ a,
 .innerWrapper .table-responsive .table thead tr th,
 .innerWrapper .table-responsive .table tbody tr td .btn-default:hover,
 .callAction {
-  background-color: #ec5598; }
+  background-color: #ee957a; }
 
 ::-moz-selection {
-  background-color: #ec5598; }
+  background-color: #ee957a; }
 
 ::selection {
-  background-color: #ec5598; }
+  background-color: #ee957a; }
 
 .btn-theme, .btn-theme:focus,
 .btn-theme.active, .btn-theme:active, .btn-theme:hover,
@@ -154,15 +154,15 @@ a,
 .productPagination.productPagination .pagination li.active a:hover,
 .blogSidebar .panel-heading,
 .innerWrapper .table-responsive .table tbody tr td .btn-default:hover {
-  border-color: #ec5598; }
+  border-color: #ee957a; }
 
 @media (min-width: 768px) {
   .navbar .navbar-nav li.open .dropdown-menu,
   .navbar .navbar-nav li.dropdown .dropdown-menu {
-    border-top-color: #ec5598; } }
+    border-top-color: #ee957a; } }
 
 .footerInfo {
-  border-top-color: #ec5598; }
+  border-top-color: #ee957a; }
 
 .owl-stage-outer,
 .tabs-left .nav li a:hover,
@@ -172,19 +172,17 @@ a,
 .tabs-left .nav li.active a a:active,
 .homeGallery ul.filter > li.active > a,
 .homeGallery ul.filter > li > a:hover {
-  border-bottom-color: #ec5598; }
+  border-bottom-color: #ee957a; }
 
 .tabTop .nav li.active a span,
 .tabTop .nav li a:hover span {
-  border-bottom-color: rgba(236, 85, 152, 0.5); }
+  border-bottom-color: rgba(238, 149, 122, 0.5); }
 
 .offerContent .offerTitle,
 .productMask {
-  background-color: rgba(236, 85, 152, 0.7); }
+  background-color: rgba(238, 149, 122, 0.7); }
 
 .expertMask, .priceTableWrapper:hover .maskImage {
-  background-color: rgba(236, 85, 152, 0.5); }
+  background-color: rgba(238, 149, 122, 0.5); }
 
-/*# sourceMappingURL=maps/default.css.map */
-
-
+/*# sourceMappingURL=maps/color-option3.css.map */

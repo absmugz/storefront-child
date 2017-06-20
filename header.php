@@ -7,21 +7,27 @@
  * @package storefront
  */
 
-?><!doctype html>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+
+ <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
+  
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class( 'body-wrapper static' ); ?>>
-  <div class="se-pre-con"></div>
-  <div class="main-wrapper">
-
 
 
 	<header  id="pageTop" class="header" style="<?php storefront_header_styles(); ?>">
@@ -31,8 +37,8 @@
         <div class="container">
           <div class="top-bar-right">
             <ul class="list-inline">
-              <li><a href=""><i class="fa fa-envelope" aria-hidden="true"></i> info@yourdomain.com</a></li>
-              <li><span><i class="fa fa-phone" aria-hidden="true"></i>+1 234 567 8900</span></li>
+              <li><a href=""><i class="fa fa-envelope" aria-hidden="true"></i>info@allurestudio.co.za</a></li>
+              <li><span><i class="fa fa-phone" aria-hidden="true"></i>021 674 0403</span></li>
             </ul>
           </div>
         </div>
@@ -68,8 +74,8 @@
 	 */
 	do_action( 'storefront_before_content' ); ?>
 
-	<div id="content" class="site-content" tabindex="-1">
-		<div class="col-full">
+  <div class="se-pre-con"></div>
+  <div class="main-wrapper">
 
 		<?php
 		/**
