@@ -32,6 +32,38 @@ get_header(); ?>
 
           <div class="col-sm-8 col-xs-12">
 
+
+
+
+
+<?php
+
+$args = array(
+    'post_type'         => 'post',
+    'posts_per_page'    => 10
+);
+$the_query = new WP_Query( $args );
+
+if ( $the_query->have_posts() ) : ?>
+    <?php  while ( $the_query->have_posts() ) :  $the_query->the_post(); ?>
+      <div class="blogPost">
+	   <img src="http://placehold.it/770x400" alt="Image Blog" class="img-responsive">
+	     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></h2>
+	
+	  <p><?php the_excerpt(); ?></p>
+              <ul class="list-inline">
+                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Admin</a></li>
+                <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 21 Likes</a></li>
+                <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 5 Comments</a></li>
+              </ul>
+		
+	</div>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+
+
+<!--
             <div class="blogPost">
               <img src="http://placehold.it/770x400" alt="Image Blog" class="img-responsive">
               <h2><a href="blog-single-right-sidebar.html">The standard Lorem Ipsum passage</a></h2>
@@ -81,7 +113,8 @@ get_header(); ?>
                 <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 21 Likes</a></li>
                 <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 5 Comments</a></li>
               </ul>
-            </div>
+            </div> 
+            -->
 
             <div class="paginationCommon paginationOne">
               <nav aria-label="Page navigation">
