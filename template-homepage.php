@@ -94,10 +94,10 @@ get_header(); ?>
 
 
 <!-- VARIETY SECTION -->
-    <section class="clearfix varietySection">
+    <section class="clearfix varietySection" id='pricelist'>
       <div class="container">
         <div class="secotionTitle">
-          <h2><span>Discover</span>variety of spa</h2>
+          <h2><span>Pricelist</span>our affordable prices</h2>
         </div>
         <div class="row">
           <div class="col-xs-12">
