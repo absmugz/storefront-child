@@ -23,6 +23,10 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
   
+  
+   <!-- FAVICON -->
+  <link href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.png" rel="shortcut icon">
+  
 
 <?php wp_head(); ?>
 </head>
