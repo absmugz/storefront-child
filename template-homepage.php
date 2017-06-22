@@ -69,20 +69,25 @@ get_header(); ?>
       </div>
     </section>
 
+    
+
+    
+
 <!-- ABOUT SECTION -->
-    <section class="container-fluid clearfix aboutSection patternbg" >
+    <section class="container-fluid clearfix aboutSection patternbg" id="about" >
       <div class="aboutInner">
         <div class="sepcialContainer">
           <div class="row">
             <div class="col-sm-6 col-xs-12 rightPadding">
               <div class="imagebox ">
-                <img src="http://placehold.it/540x400" alt="Image About" class="img-responsive">
+                <!-- <img src="http://placehold.it/540x400" alt="Image About" class="img-responsive">-->
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/540x400.png" alt="Allure hair & beauty salon" class="img-responsive">
               </div>
             </div>
             <div class="col-sm-6 col-xs-12">
               <div class="aboutInfo">
-                <h2>Angel luxury spa resort</h2>
-                <h3>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab.</h3>
+                <h2>Allure hair & beauty salon</h2>
+                <h3>Allure is an upmarket hair & beauty salon in Claremont, Cape Town.</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos
                   trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat  cupidatat non proident.</p>
               </div>

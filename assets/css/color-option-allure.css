@@ -184,5 +184,12 @@ a,
 
 .expertMask, .priceTableWrapper:hover .maskImage {
   background-color: rgba(238, 149, 122, 0.5); }
+  
+
+
+.priceInfo > ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
 /*# sourceMappingURL=maps/color-option3.css.map */
