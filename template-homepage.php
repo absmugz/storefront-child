@@ -115,6 +115,35 @@ get_header(); ?>
     </section>
 
 
+
+        
+<?php
+
+    $args = array(
+'post_type' => 'style',
+'paged' => $paged,
+'showposts' => 8 ,
+'service' =>"singles"
+);
+$wp_query= null;
+$wp_query = new WP_Query();
+$wp_query->query($args);
+
+      ?>
+      
+      <pre>
+    <?php
+        print_r($wp_query->query($args));die();
+    ?>
+</pre>
+
+        <ul>
+          <?php while($the_query->have_posts()) : $the_query->the_post(); ?>
+            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+          <?php endwhile; wp_reset_query(); ?>
+        </ul>
+        
+
 <!-- VARIETY SECTION -->
     <section class="clearfix varietySection" id='pricelist'>
       <div class="container">
