@@ -14,7 +14,21 @@
 
 get_header(); ?>
 
-
+<?php
+ 
+  //response generation function
+  $response = "";
+ 
+  //function to generate response
+  function my_contact_form_generate_response($type, $message){
+ 
+    global $response;
+ 
+    if($type == "success") $response = "<div class='success'>{$message}</div>";
+    else $response = "<div class='error'>{$message}</div>";
+ 
+  }
+?>
 
 <!-- MAIN SLIDER -->
     <section class="main-slider" data-loop="true" data-autoplay="true" data-interval="7000">
@@ -88,8 +102,11 @@ get_header(); ?>
               <div class="aboutInfo">
                 <h2>Allure hair & beauty salon</h2>
                 <h3>Allure is an upmarket hair & beauty salon in Claremont, Cape Town.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos
-                  trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat  cupidatat non proident.</p>
+                <p>We believe that EVERY woman is a creation of absolute beauty. Therefore, we provide a service tailored to every woman's unique needs. 
+                We invite you to experience an elevated CRAFT of hairdressing from our knowledgeable and passionate stylists.
+                SUPERIOR and PROFESSIONAL service, to ensure 100 % customer satisfaction. CURRENT and TRENDY styles to transform your image to where you want it to be. 
+                A VIBEY, CLASSY and FRIENDLY environment.We offer a convenient secure location, 
+                friendly hostess and stylists, refreshments, aircon, entertainment, free WiFi, restroom and a mystery gift every time you visit.</p>
               </div>
             </div>
           </div>
@@ -1318,23 +1335,29 @@ get_header(); ?>
               <h3>Get in touch</h3>
             </div>
             <div class="contactForm">
-              <form action="#">
+               <?php echo $response; ?>
+               <form action="<?php the_permalink(); ?>" method="post">
               <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Your Name">
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Your Name" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Your Email">
+                  <input type="email" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>" class="form-control" id="exampleInputEmail1" placeholder="Your Email">
+               
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Your Phone">
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" placeholder="Your Message"></textarea>
+                 
+                  <textarea class="form-control" placeholder="Your Message" type="text" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
                 </div>
+                 <input type="hidden" name="submitted" value="1">
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary first-btn">send Message</button>
                 </div>
               </form>
+              
+
             </div>
           </div>
           <div class="col-md-4 col-sm-5 col-xs-12">
