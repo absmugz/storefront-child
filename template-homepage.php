@@ -14,21 +14,7 @@
 
 get_header(); ?>
 
-<?php
- 
-  //response generation function
-  $response = "";
- 
-  //function to generate response
-  function my_contact_form_generate_response($type, $message){
- 
-    global $response;
- 
-    if($type == "success") $response = "<div class='success'>{$message}</div>";
-    else $response = "<div class='error'>{$message}</div>";
- 
-  }
-?>
+
 
 <!-- MAIN SLIDER -->
     <section class="main-slider" data-loop="true" data-autoplay="true" data-interval="7000">
@@ -119,7 +105,7 @@ get_header(); ?>
         
 <?php
 
-    $args = array(
+$args = array(
 'post_type' => 'style',
 'paged' => $paged,
 'showposts' => 8 ,
@@ -133,16 +119,59 @@ $wp_query->query($args);
       
       <pre>
     <?php
-        print_r($wp_query->query($args));die();
+        print_r($wp_query->query($args));
     ?>
 </pre>
 
-        <ul>
-          <?php while($the_query->have_posts()) : $the_query->the_post(); ?>
-            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-          <?php endwhile; wp_reset_query(); ?>
-        </ul>
-        
+
+
+<?php 
+$cat_args = array(
+    'orderby'       => 'term_id', 
+    'order'         => 'ASC',
+    'hide_empty'    => true, 
+);
+
+$terms = get_terms('service', $cat_args);
+
+    foreach($terms as $taxonomy){
+         $term_slug = $taxonomy->slug;
+
+    $tax_post_args = array(
+          'post_type' => 'style',
+          'posts_per_page' => 999,
+          'order' => 'ASC',
+          'tax_query' => array(
+                array(
+                     'taxonomy' => 'singles',
+                     'field' => 'slug',
+                     'terms' => '$term_slug'
+                )
+           )
+    );
+
+    $tax_post_qry = new WP_Query($tax_post_args);
+
+    if($tax_post_qry->have_posts()) :
+         while($tax_post_qry->have_posts()) :
+                $tax_post_qry->the_post();
+
+                the_title();
+
+          endwhile;
+
+    else :
+          echo "No posts";
+    endif;
+} //end foreach loop 
+?>
+ 
+
+ 
+ 
+ 
+
+      
 
 <!-- VARIETY SECTION -->
     <section class="clearfix varietySection" id='pricelist'>
