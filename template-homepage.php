@@ -152,7 +152,7 @@ $terms = get_terms( 'service', array(
                    // Define the query
                     $args = array(
                         'post_type' => 'style',
-                        'style' => $term->slug
+                        'taxonomy' => $term->slug
                     );
                     $query = new WP_Query( $args );
     
@@ -162,7 +162,8 @@ $terms = get_terms( 'service', array(
                   echo '<div class="tabbable tabs-left row"><ul class="nav nav-tabs col-sm-4 col-xs-12">';
                   
                   
-                   
+
+
                  
                      while ( $query->have_posts() ) : $query->the_post(); ?>
  
