@@ -158,7 +158,100 @@ $terms = get_terms( 'service', array(
     
                 	 echo '<div class="tab-pane" id="' . $term->name . '">';
                 	
-               
+                	
+                  echo '<div class="tabbable tabs-left row"><ul class="nav nav-tabs col-sm-4 col-xs-12">';
+                  
+                  
+                   
+                 
+                     while ( $query->have_posts() ) : $query->the_post(); ?>
+ 
+      
+        
+        <li>
+            <a href="#" data-toggle="tab"><?php the_title(); ?><span>$25</span></a>
+        </li>
+         
+        <?php endwhile;
+                    
+                    echo '</ul><div class="tab-content col-sm-8 col-xs-12">
+                      <div class="tab-pane active" id="braidstwist">
+                        <div class="varietyContent">
+                          <img src="img/home/variety.jpg" alt="Image Variety" class="img-responsive">
+                          <h3>Braids & Twist</h3>
+                          <h4>$25.00 Per Head</h4>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                          <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="haircolor">
+                        <div class="varietyContent">
+                          <img src="img/home/variety-2.jpg" alt="Image Variety" class="img-responsive">
+                          <h3>Hair Color</h3>
+                          <h4>$40.00 Per Head</h4>
+                          <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="hairextension">
+                        <div class="varietyContent">
+                          <img src="img/home/variety-3.jpg" alt="Image Variety" class="img-responsive">
+                          <h3>Hair Extension</h3>
+                          <h4>$19.00 Per Head</h4>
+                          <p>Amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="correctivecolor">
+                        <div class="varietyContent">
+                          <img src="img/home/variety-4.jpg" alt="Image Variety" class="img-responsive">
+                          <h3>Corrective Color</h3>
+                          <h4>$13.00 Per Head</h4>
+                          <p>Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="haircut">
+                        <div class="varietyContent">
+                          <img src="img/home/variety-5.jpg" alt="Image Variety" class="img-responsive">
+                          <h3>Hair Cut</h3>
+                          <h4>$48.00 Per Head</h4>
+                          <p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="partialfoil">
+                        <div class="varietyContent">
+                          <img src="img/home/variety-6.jpg" alt="Image Variety" class="img-responsive">
+                          <h3>Partial Foil</h3>
+                          <h4>$10.00 Per Head</h4>
+                          <p>Sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="extensionpertrack">
+                        <div class="varietyContent">
+                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
+                          <h3>Extension Per Track</h3>
+                          <h4>$40.00 Per Head</h4>
+                          <p>Voluptate velit esse
+                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>';
                  
                 
    
