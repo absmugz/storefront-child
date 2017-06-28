@@ -104,7 +104,8 @@ get_header(); ?>
 
  <?php //start by fetching the terms for the animal_cat taxonomy
 $terms = get_terms( 'service', array(
-    'orderby'    => 'count',
+    //'orderby'    => 'count',
+    'order' => 'DESC',
     'hide_empty' => 0
 ) );
 
@@ -132,8 +133,8 @@ $terms = get_terms( 'service', array(
                     );
                     $query = new WP_Query( $args );
     
-
-                	 echo '<li><a href="'."#". $term->name . '" data-toggle="tab"><span>' . $term->name . '</span></a></li>';
+                	 
+                	 echo '<li><a href="'."#". $term->slug . '" data-toggle="tab"><span>' . $term->name . '</span></a></li>';
                       
                   }
  
@@ -141,29 +142,47 @@ $terms = get_terms( 'service', array(
   
   ?>
               <div class="tab-content">
-                <div class="tab-pane active" id="hair">
+                <div class="tab-pane active" id="weaves-wigs">
                   <div class="tabbable tabs-left row">
                     <ul class="nav nav-tabs col-sm-4 col-xs-12">
-                      <li class="active"><a href="#braidstwist" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
-                      <li><a href="#haircolor" data-toggle="tab">Hair Color <span>$40</span></a></li>
-                      <li><a href="#hairextension" data-toggle="tab">Hair Extension<span>$19</span></a></li>
-                      <li><a href="#correctivecolor" data-toggle="tab">Corrective Color<span>$13</span></a></li>
-                      <li><a href="#haircut" data-toggle="tab">Hair Cut<span>$48</span></a></li>
-                      <li><a href="#partialfoil" data-toggle="tab">Partial Foil<span>$10</span></a></li>
-                      <li><a href="#extensionpertrack" data-toggle="tab">Extension Per Track<span>$40</span></a></li>
-                      <li class="active"><a href="#braidstwist" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
-                      <li><a href="#haircolor" data-toggle="tab">Hair Color <span>$40</span></a></li>
-                      <li><a href="#hairextension" data-toggle="tab">Hair Extension<span>$19</span></a></li>
-                      <li><a href="#correctivecolor" data-toggle="tab">Corrective Color<span>$13</span></a></li>
-                      <li><a href="#haircut" data-toggle="tab">Hair Cut<span>$48</span></a></li>
-                      <li><a href="#partialfoil" data-toggle="tab">Partial Foil<span>$10</span></a></li>
-                      <li><a href="#extensionpertrack" data-toggle="tab">Extension Per Track<span>$40</span></a></li>
-                    </ul>
+                      
+                      
+                      <?php
+// now run a query for each animal family
+
+    // Define the query
+     $args = array(
+                        'post_type' => 'style',
+                        'style' => 'weaves-wigs'
+    );
+    
+    
+    
+    
+    $query = new WP_Query( $args );
+             
+
+     
+        // Start the Loop
+        while ( $query->have_posts() ) : $query->the_post(); ?>
+ 
+       <li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>$25</span></a></li>
+         
+       
+        <?php endwhile;
+     
+    echo '</ul>';
+     
+    // use reset postdata to restore orginal query
+    wp_reset_postdata();
+ 
+ ?>
+                      
                     <div class="tab-content col-sm-8 col-xs-12">
                       <div class="tab-pane active" id="braidstwist">
                         <div class="varietyContent">
                           <img src="img/home/variety.jpg" alt="Image Variety" class="img-responsive">
-                          <h3>Braids & Twist</h3>
+                          <h3>Weaves & Wigs</h3>
                           <h4>$25.00 Per Head</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
@@ -238,7 +257,7 @@ $terms = get_terms( 'service', array(
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="makeup">
+                <div class="tab-pane" id="singles">
                   <div class="tabbable tabs-left row">
                     <ul class="nav nav-tabs col-sm-4 col-xs-12">
                       <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
@@ -328,7 +347,7 @@ $terms = get_terms( 'service', array(
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="facial">
+                <div class="tab-pane" id="hair">
                   <div class="tabbable tabs-left row">
                     <ul class="nav nav-tabs col-sm-4 col-xs-12">
                       <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
@@ -406,7 +425,7 @@ $terms = get_terms( 'service', array(
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="massage">
+                <div class="tab-pane" id="dreadlocks-faux-locs-marley">
                   <div class="tabbable tabs-left row">
                     <ul class="nav nav-tabs col-sm-4 col-xs-12">
                       <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
@@ -489,7 +508,7 @@ $terms = get_terms( 'service', array(
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="nail">
+                <div class="tab-pane" id="cornrows">
                   <div class="tabbable tabs-left row">
                     <ul class="nav nav-tabs col-sm-4 col-xs-12">
                       <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
@@ -567,7 +586,7 @@ $terms = get_terms( 'service', array(
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="waxing">
+                <!--<div class="tab-pane" id="nails">
                   <div class="tabbable tabs-left row">
                     <ul class="nav nav-tabs col-sm-4 col-xs-12">
                       <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
@@ -644,7 +663,7 @@ $terms = get_terms( 'service', array(
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>
