@@ -150,23 +150,37 @@ $terms = get_terms( 'service', array(
                       <?php
 // now run a query for each animal family
 
-    // Define the query
-     $args = array(
-                        'post_type' => 'style',
-                        'style' => 'weaves-wigs'
-    );
+https://website-revamp-absolom.c9users.io/wp-admin/term.php?taxonomy=service&tag_ID=39&post_type=style&wp_http_referer=%2Fwp-admin%2Fedit-tags.php%3Ftaxonomy%3Dservice%26post_type%3Dstyle
+
+$args = array(
+    'post_type' => 'style',          // name of post type.
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'service',   // taxonomy name
+            'field' => 'weaves-wigs',           // term_id, slug or name
+            'terms' => 39,                  // term id, term slug or term name
+      
+        )
+    )
+);
     
-    
-    
-    
+ 
     $query = new WP_Query( $args );
-             
+   
+   /* 
+    echo '<pre>';
+  
+        print_r($query);die();
+  
+    echo '</pre>';
+   */          
+
 
      
         // Start the Loop
         while ( $query->have_posts() ) : $query->the_post(); ?>
  
-       <li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>$25</span></a></li>
+       <li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
          
        
         <?php endwhile;
