@@ -345,7 +345,7 @@ $terms = get_terms( 'service', array(
                       <div class="tab-pane active">
                         <div class="varietyContent">
                           <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Braids & Twist</h3>
+                          <h3>Dreadlocks / Faux Locs / marley</h3>
                           <h4>Prices from R25.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
@@ -360,22 +360,45 @@ $terms = get_terms( 'service', array(
                 <div class="tab-pane" id="cornrows">
                   <div class="tabbable tabs-left row">
                     
-                    <ul class="nav nav-tabs col-sm-4 col-xs-12">
-                      <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
-                      <li><a href="#haircolor113" data-toggle="tab">Hair Color <span>$40</span></a></li>
-                      <li><a href="#hairextension113" data-toggle="tab">Hair Extension<span>$19</span></a></li>
-                      <li><a href="#correctivecolor113" data-toggle="tab">Corrective Color<span>$13</span></a></li>
-                      <li><a href="#haircut113" data-toggle="tab">Hair Cut<span>$48</span></a></li>
-                      <li><a href="#partialfoil113" data-toggle="tab">Partial Foil<span>$10</span></a></li>
-                      <li><a href="#extensionpertrack113" data-toggle="tab">Extension Per Track<span>$40</span></a></li>
-                    </ul>
+                   <?php 
+                
+                      // args
+                      $args = array(
+                          'post_type' => 'style',          // name of post type.
+                          'tax_query' => array(
+                              array(
+                                  'taxonomy' => 'service',   // taxonomy name
+                                  'field' => 'cornrows',           // term_id, slug or name
+                                  'terms' => 40,                  // term id, term slug or term name
+                            
+                              )
+                          )
+                      );
+                      
+                      
+                      // query
+                      $the_query = new WP_Query( $args );
+                      
+                      ?>
+                      <?php if( $the_query->have_posts() ): ?>
+                       <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                      		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
+                      	<?php endwhile; ?>
+                      	</ul>
+                      <?php endif; ?>
+                      
+                      <?php wp_reset_query();	 
+                      // Restore global post data stomped by the_post().
+                      ?>
+                    
                     
                     <div class="tab-content col-sm-8 col-xs-12">
                       <div class="tab-pane active">
                         <div class="varietyContent">
                           <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
                           <h3>Cornrows</h3>
-                          <h4>$25.00 Per Head</h4>
+                          <h4>Prices from R25.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
