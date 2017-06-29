@@ -22,7 +22,10 @@ get_header(); ?>
 
         <!-- Slide One -->
         
-        <div class="slide slideResize slide1" style="background-image: url(http://allurestudio.co.za/revamp/img/home/home-slider-1.jpg);">
+        
+       
+        
+        <div class="slide slideResize slide1" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-1.jpg);">
           <div class="container">
             <div class="slide-inner1 common-inner">
               <span class="h1 from-bottom">luxury spa resort</span><br>
@@ -33,7 +36,7 @@ get_header(); ?>
         </div>
 
         <!-- Slide Two -->
-        <div class="slide slideResize slide2" style="background-image: url(http://allurestudio.co.za/revamp/img/home/home-slider-2.jpg);">
+        <div class="slide slideResize slide2" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-2.jpg);">
           <div class="container">
             <div class="slide-inner2 common-inner">
               <span class="h1 from-bottom">luxury spa resort</span><br>
@@ -44,7 +47,7 @@ get_header(); ?>
         </div>
 
         <!-- Slide Three -->
-        <div class="slide slideResize slide3" style="background-image: url(http://allurestudio.co.za/revamp/img/home/home-slider-3.jpg);">
+        <div class="slide slideResize slide3" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-3.jpg);">
           <div class="container">
             <div class="common-inner slide-inner3">
               <img src="img/favicon.png" alt="Logo Icon" class="img-responsive">
@@ -56,7 +59,7 @@ get_header(); ?>
         </div>
 
         <!-- Slide Four -->
-        <div class="slide slideResize slide4" style="background-image: url(http://allurestudio.co.za/revamp/img/home/home-slider-4.jpg);">
+        <div class="slide slideResize slide4" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-4.jpg);">
           <div class="container">
             <div class="common-inner slide-inner4">
               <span class="h1 from-bottom">luxury spa resort</span><br>
