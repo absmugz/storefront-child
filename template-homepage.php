@@ -142,388 +142,224 @@ $terms = get_terms( 'service', array(
   
   ?>
               <div class="tab-content">
+                
+<!-- weaves-wigs -->
                 <div class="tab-pane active" id="weaves-wigs">
                   <div class="tabbable tabs-left row">
-                    <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                    <!-- <ul class="nav nav-tabs col-sm-4 col-xs-12">-->
+                      
+                      <?php 
+                      
+                      // args
+                      $args = array(
+                          'post_type' => 'style',          // name of post type.
+                          'tax_query' => array(
+                              array(
+                                  'taxonomy' => 'service',   // taxonomy name
+                                  'field' => 'weaves-wigs',           // term_id, slug or name
+                                  'terms' => 39,                  // term id, term slug or term name
+                            
+                              )
+                          )
+                      );
                       
                       
-                      <?php
-// now run a query for each animal family
-
-https://website-revamp-absolom.c9users.io/wp-admin/term.php?taxonomy=service&tag_ID=39&post_type=style&wp_http_referer=%2Fwp-admin%2Fedit-tags.php%3Ftaxonomy%3Dservice%26post_type%3Dstyle
-
-$args = array(
-    'post_type' => 'style',          // name of post type.
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'service',   // taxonomy name
-            'field' => 'weaves-wigs',           // term_id, slug or name
-            'terms' => 39,                  // term id, term slug or term name
-      
-        )
-    )
-);
-    
- 
-    $query = new WP_Query( $args );
-   
-   /* 
-    echo '<pre>';
-  
-        print_r($query);die();
-  
-    echo '</pre>';
-   */          
-
-
-     
-        // Start the Loop
-        while ( $query->have_posts() ) : $query->the_post(); ?>
- 
-       <li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
-         
-       
-        <?php endwhile;
-     
-    echo '</ul>';
-     
-    // use reset postdata to restore orginal query
-    wp_reset_postdata();
- 
- ?>
+                      // query
+                      $the_query = new WP_Query( $args );
                       
+                      ?>
+                      <?php if( $the_query->have_posts() ): ?>
+                       <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                      		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
+                      	<?php endwhile; ?>
+                      	</ul>
+                      <?php endif; ?>
+                      
+                      <?php wp_reset_query();	 
+                      // Restore global post data stomped by the_post().
+                      ?>
+                     
                     <div class="tab-content col-sm-8 col-xs-12">
-                      <div class="tab-pane active" id="braidstwist">
+                      <div class="tab-pane active">
                         <div class="varietyContent">
                           <img src="img/home/variety.jpg" alt="Image Variety" class="img-responsive">
                           <h3>Weaves & Wigs</h3>
-                          <h4>$25.00 Per Head</h4>
+                            <h4>Prices from R250.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
-                      <div class="tab-pane" id="haircolor">
-                        <div class="varietyContent">
-                          <img src="img/home/variety-2.jpg" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Color</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="hairextension">
-                        <div class="varietyContent">
-                          <img src="img/home/variety-3.jpg" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Extension</h3>
-                          <h4>$19.00 Per Head</h4>
-                          <p>Amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="correctivecolor">
-                        <div class="varietyContent">
-                          <img src="img/home/variety-4.jpg" alt="Image Variety" class="img-responsive">
-                          <h3>Corrective Color</h3>
-                          <h4>$13.00 Per Head</h4>
-                          <p>Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="haircut">
-                        <div class="varietyContent">
-                          <img src="img/home/variety-5.jpg" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Cut</h3>
-                          <h4>$48.00 Per Head</h4>
-                          <p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="partialfoil">
-                        <div class="varietyContent">
-                          <img src="img/home/variety-6.jpg" alt="Image Variety" class="img-responsive">
-                          <h3>Partial Foil</h3>
-                          <h4>$10.00 Per Head</h4>
-                          <p>Sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="extensionpertrack">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Extension Per Track</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Voluptate velit esse
-                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
+    
                     </div>
                   </div>
                 </div>
+<!-- weaves-wigs -->
+
+
+<!-- singles -->
                 <div class="tab-pane" id="singles">
                   <div class="tabbable tabs-left row">
-                    <ul class="nav nav-tabs col-sm-4 col-xs-12">
-                      <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
-                      <li><a href="#haircolor1" data-toggle="tab">Hair Color <span>$40</span></a></li>
-                      <li><a href="#hairextension1" data-toggle="tab">Hair Extension<span>$19</span></a></li>
-                      <li><a href="#correctivecolor1" data-toggle="tab">Corrective Color<span>$13</span></a></li>
-                      <li><a href="#haircut1" data-toggle="tab">Hair Cut<span>$48</span></a></li>
-                      <li><a href="#partialfoil1" data-toggle="tab">Partial Foil<span>$10</span></a></li>
-                      <li><a href="#extensionpertrack1" data-toggle="tab">Extension Per Track<span>$40</span></a></li>
-                    </ul>
+                    
+                    <!-- <ul class="nav nav-tabs col-sm-4 col-xs-12">-->
+                      
+                      <?php 
+                      
+                      // args
+                      $args = array(
+                          'post_type' => 'style',          // name of post type.
+                          'tax_query' => array(
+                              array(
+                                  'taxonomy' => 'service',   // taxonomy name
+                                  'field' => 'singles',           // term_id, slug or name
+                                  'terms' => 41,                  // term id, term slug or term name
+                            
+                              )
+                          )
+                      );
+                      
+                      
+                      // query
+                      $the_query = new WP_Query( $args );
+                      
+                      ?>
+                      <?php if( $the_query->have_posts() ): ?>
+                       <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                      		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
+                      	<?php endwhile; ?>
+                      	</ul>
+                      <?php endif; ?>
+                      
+                      <?php wp_reset_query();	 
+                      // Restore global post data stomped by the_post().
+                      ?>
+                    
                     <div class="tab-content col-sm-8 col-xs-12">
-                      <div class="tab-pane active" id="braidstwist1">
+                      <div class="tab-pane active">
                         <div class="varietyContent">
                           <img src="img/home/variety-2.jpg" alt="Image Variety" class="img-responsive">
-                          <h3>Braids & Twist</h3>
-                          <h4>$25.00 Per Head</h4>
+                          <h3>Singles</h3>
+                          <h4>Prices from R250.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
-                      <div class="tab-pane" id="haircolor1">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Color</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="hairextension1">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Extension</h3>
-                          <h4>$19.00 Per Head</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="correctivecolor1">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Corrective Color</h3>
-                          <h4>$13.00 Per Head</h4>
-                          <p>Ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat. Duis aute irure dolor in reprehenderit in.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="haircut1">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Cut</h3>
-                          <h4>$48.00 Per Head</h4>
-                          <p>Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="partialfoil1">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Partial Foil</h3>
-                          <h4>$10.00 Per Head</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="extensionpertrack1">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Extension Per Track</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
+
+                     
                     </div>
                   </div>
                 </div>
+<!-- singles -->
+<!-- hair -->
                 <div class="tab-pane" id="hair">
                   <div class="tabbable tabs-left row">
-                    <ul class="nav nav-tabs col-sm-4 col-xs-12">
-                      <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
-                      <li><a href="#haircolor11" data-toggle="tab">Hair Color <span>$40</span></a></li>
-                      <li><a href="#hairextension11" data-toggle="tab">Hair Extension<span>$19</span></a></li>
-                      <li><a href="#correctivecolor11" data-toggle="tab">Corrective Color<span>$13</span></a></li>
-                      <li><a href="#haircut11" data-toggle="tab">Hair Cut<span>$48</span></a></li>
-                      <li><a href="#partialfoil11" data-toggle="tab">Partial Foil<span>$10</span></a></li>
-                      <li><a href="#extensionpertrack11" data-toggle="tab">Extension Per Track<span>$40</span></a></li>
-                    </ul>
+                    
+                       <?php 
+                   
+                      // args
+                      $args = array(
+                          'post_type' => 'style',          // name of post type.
+                          'tax_query' => array(
+                              array(
+                                  'taxonomy' => 'service',   // taxonomy name
+                                  'field' => 'hair',           // term_id, slug or name
+                                  'terms' => 36,                  // term id, term slug or term name
+                            
+                              )
+                          )
+                      );
+                      
+                      
+                      // query
+                      $the_query = new WP_Query( $args );
+                      
+                      ?>
+                      <?php if( $the_query->have_posts() ): ?>
+                       <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                      		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
+                      	<?php endwhile; ?>
+                      	</ul>
+                      <?php endif; ?>
+                      
+                      <?php wp_reset_query();	 
+                      // Restore global post data stomped by the_post().
+                      ?>
+                    
                     <div class="tab-content col-sm-8 col-xs-12">
-                      <div class="tab-pane active" id="braidstwist1">
+                      <div class="tab-pane active">
                         <div class="varietyContent">
                           <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Braids & Twist</h3>
-                          <h4>$25.00 Per Head</h4>
+                          <h3>Hair, Haircuts & Other</h3>
+                          <h4>Prices from R25.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
-                      <div class="tab-pane" id="haircolor11">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Color</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="hairextension11">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Extension</h3>
-                          <h4>$19.00 Per Head</h4>
-                          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="correctivecolor11">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Cut</h3>
-                          <h4>$48.00 Per Head</h4>
-                          <p>Nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="haircut11">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Cut</h3>
-                          <h4>$48.00 Per Head</h4>
-                          <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="partialfoil11">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Partial Foil</h3>
-                          <h4>$10.00 Per Head</h4>
-                          <p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="extensionpertrack11">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Extension Per Track</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
+                      
+                      
                     </div>
                   </div>
                 </div>
+<!-- hair -->
+<!-- dreadlocks-faux-locs-marley -->
                 <div class="tab-pane" id="dreadlocks-faux-locs-marley">
                   <div class="tabbable tabs-left row">
-                    <ul class="nav nav-tabs col-sm-4 col-xs-12">
-                      <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
-                      <li><a href="#haircolor112" data-toggle="tab">Hair Color <span>$40</span></a></li>
-                      <li><a href="#hairextension112" data-toggle="tab">Hair Extension<span>$19</span></a></li>
-                      <li><a href="#correctivecolor112" data-toggle="tab">Corrective Color<span>$13</span></a></li>
-                      <li><a href="#haircut112" data-toggle="tab">Hair Cut<span>$48</span></a></li>
-                      <li><a href="#partialfoil112" data-toggle="tab">Partial Foil<span>$10</span></a></li>
-                      <li><a href="#extensionpertrack112" data-toggle="tab">Extension Per Track<span>$40</span></a></li>
-                    </ul>
+                    
+                    <?php 
+                 
+                      // args
+                      $args = array(
+                          'post_type' => 'style',          // name of post type.
+                          'tax_query' => array(
+                              array(
+                                  'taxonomy' => 'service',   // taxonomy name
+                                  'field' => 'dreadlocks-faux-locs-marley',           // term_id, slug or name
+                                  'terms' => 37,                  // term id, term slug or term name
+                            
+                              )
+                          )
+                      );
+                      
+                      
+                      // query
+                      $the_query = new WP_Query( $args );
+                      
+                      ?>
+                      <?php if( $the_query->have_posts() ): ?>
+                       <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                      		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
+                      	<?php endwhile; ?>
+                      	</ul>
+                      <?php endif; ?>
+                      
+                      <?php wp_reset_query();	 
+                      // Restore global post data stomped by the_post().
+                      ?>
+                    
+                    
+                    
                     <div class="tab-content col-sm-8 col-xs-12">
-                      <div class="tab-pane active" id="braidstwist1">
+                      <div class="tab-pane active">
                         <div class="varietyContent">
                           <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
                           <h3>Braids & Twist</h3>
-                          <h4>$25.00 Per Head</h4>
+                          <h4>Prices from R25.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
-                      <div class="tab-pane" id="haircolor112">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Color</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="hairextension112">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Extension</h3>
-                          <h4>$19.00 Per Head</h4>
-                          <p>Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="correctivecolor112">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Corrective Color</h3>
-                          <h4>$13.00 Per Head</h4>
-                          <p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="haircut112">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Cut</h3>
-                          <h4>$48.00 Per Head</h4>
-                          <p>Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="partialfoil112">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Partial Foil</h3>
-                          <h4>$10.00 Per Head</h4>
-                          <p>Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="extensionpertrack112">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Extension Per Track</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
+<!-- dreadlocks-faux-locs-marley -->
+<!-- cornrows -->
                 <div class="tab-pane" id="cornrows">
                   <div class="tabbable tabs-left row">
+                    
                     <ul class="nav nav-tabs col-sm-4 col-xs-12">
                       <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
                       <li><a href="#haircolor113" data-toggle="tab">Hair Color <span>$40</span></a></li>
@@ -533,151 +369,24 @@ $args = array(
                       <li><a href="#partialfoil113" data-toggle="tab">Partial Foil<span>$10</span></a></li>
                       <li><a href="#extensionpertrack113" data-toggle="tab">Extension Per Track<span>$40</span></a></li>
                     </ul>
+                    
                     <div class="tab-content col-sm-8 col-xs-12">
-                      <div class="tab-pane active" id="braidstwist1">
+                      <div class="tab-pane active">
                         <div class="varietyContent">
                           <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Braids & Twist</h3>
+                          <h3>Cornrows</h3>
                           <h4>$25.00 Per Head</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
-                      <div class="tab-pane" id="haircolor113">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Color</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="hairextension113">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Extension</h3>
-                          <h4>$19.00 Per Head</h4>
-                          <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="correctivecolor113">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Corrective Color</h3>
-                          <h4>$13.00 Per Head</h4>
-                          <p>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="haircut113">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Cut</h3>
-                          <h4>$48.00 Per Head</h4>
-                          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="partialfoil113">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Partial Foil</h3>
-                          <h4>$10.00 Per Head</h4>
-                          <p>Bore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="extensionpertrack113">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Extension Per Track</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Gna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
+                      
+                      
                     </div>
                   </div>
                 </div>
-                <!--<div class="tab-pane" id="nails">
-                  <div class="tabbable tabs-left row">
-                    <ul class="nav nav-tabs col-sm-4 col-xs-12">
-                      <li class="active"><a href="#braidstwist1" data-toggle="tab">Braids & Twist <span>$25</span></a></li>
-                      <li><a href="#haircolor114" data-toggle="tab">Hair Color <span>$40</span></a></li>
-                      <li><a href="#hairextension114" data-toggle="tab">Hair Extension<span>$19</span></a></li>
-                      <li><a href="#correctivecolor114" data-toggle="tab">Corrective Color<span>$13</span></a></li>
-                      <li><a href="#haircut114" data-toggle="tab">Hair Cut<span>$48</span></a></li>
-                      <li><a href="#partialfoil114" data-toggle="tab">Partial Foil<span>$10</span></a></li>
-                      <li><a href="#extensionpertrack114" data-toggle="tab">Extension Per Track<span>$40</span></a></li>
-                    </ul>
-                    <div class="tab-content col-sm-8 col-xs-12">
-                      <div class="tab-pane active" id="braidstwist1">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Braids & Twist</h3>
-                          <h4>$25.00 Per Head</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="haircolor114">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Color</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="hairextension114">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Extension</h3>
-                          <h4>$19.00 Per Head</h4>
-                          <p>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="correctivecolor114">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Corrective Color</h3>
-                          <h4>$13.00 Per Head</h4>
-                          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="haircut114">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Hair Cut</h3>
-                          <h4>$48.00 Per Head</h4>
-                          <p>Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="partialfoil114">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Partial Foil</h3>
-                          <h4>$10.00 Per Head</h4>
-                          <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="extensionpertrack114">
-                        <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
-                          <h3>Extension Per Track</h3>
-                          <h4>$40.00 Per Head</h4>
-                          <p>Bore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>-->
+<!-- cornrows -->
+
               </div>
             </div>
           </div>
