@@ -186,7 +186,8 @@ $terms = get_terms( 'service', array(
                     <div class="tab-content col-sm-8 col-xs-12">
                       <div class="tab-pane active">
                         <div class="varietyContent">
-                          <img src="img/home/variety.jpg" alt="Image Variety" class="img-responsive">
+                          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">
+                         
                           <h3>Weaves & Wigs</h3>
                             <h4>Prices from R250.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
@@ -241,7 +242,8 @@ $terms = get_terms( 'service', array(
                     <div class="tab-content col-sm-8 col-xs-12">
                       <div class="tab-pane active">
                         <div class="varietyContent">
-                          <img src="img/home/variety-2.jpg" alt="Image Variety" class="img-responsive">
+                          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-singles.jpg" alt="Singles" class="img-responsive">
+                          
                           <h3>Singles</h3>
                           <h4>Prices from R250.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
@@ -293,6 +295,7 @@ $terms = get_terms( 'service', array(
                     <div class="tab-content col-sm-8 col-xs-12">
                       <div class="tab-pane active">
                         <div class="varietyContent">
+                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-hair.jpg" alt="Hair, Haircuts & Other" class="img-responsive">
                           <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
                           <h3>Hair, Haircuts & Other</h3>
                           <h4>Prices from R25.00</h4>
