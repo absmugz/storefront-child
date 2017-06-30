@@ -293,4 +293,7 @@ jQuery(document).ready(function(){
       $(this).toggleClass('active').siblings().removeClass('active');
   });
 
+
+    smoothScroll.init();
+
 });

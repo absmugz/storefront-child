@@ -64,6 +64,7 @@ function allure_scripts() {
 	wp_enqueue_script('isotope-triger', get_stylesheet_directory_uri().'/assets/plugins/isotope/isotope-triger.min.js');
 	wp_enqueue_script('bootstrap-datepicker', get_stylesheet_directory_uri().'/assets/plugins/datepicker/bootstrap-datepicker.min.js');
 	wp_enqueue_script('syotimer', get_stylesheet_directory_uri().'/assets/plugins/syotimer/jquery.syotimer.min.js');
+	wp_enqueue_script('smoothscroll', get_stylesheet_directory_uri().'/assets/plugins/smoothscroll/smooth-scroll.min.js');
 	wp_enqueue_script('custom', get_stylesheet_directory_uri().'/assets/js/custom.js');
 
 
@@ -123,19 +124,19 @@ add_action( 'init', 'remove_sf_actions' );
                 <a href="<?php bloginfo('url');?>/home/">Home</a>
               </li>
               <li>
-                <a href="#about">About us</a>
+                <a data-scroll href="#about" class="scrolling">About us</a>
               </li>
               <li>
-                <a href="#services">Services</a>
+                <a href="#services" class="scrolling">Services</a>
               </li>
               <li>
-                <a href="#pricelist">Pricelist</a>
+                <a href="#pricelist" class="scrolling">Pricelist</a>
               </li>
               <li>
-                <a href="#team">Team</a>
+                <a href="#team" class="scrolling">Team</a>
               </li>
                <li>
-                <a href="#gallery">Gallery</a>
+                <a href="#gallery" class="scrolling">Gallery</a>
               </li>
               <li>
                 <a href="<?php bloginfo('url');?>/blog/">Blog</a>

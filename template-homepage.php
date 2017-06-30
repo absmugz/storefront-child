@@ -655,7 +655,7 @@ $terms = get_terms( 'service', array(
 
 
 <!-- HOME GALLERY SECTION -->
-    <section class="clearfix homeGalleryTitle">
+    <section class="clearfix homeGalleryTitle" id="gallery">
       <div class="container">
         <div class="secotionTitle">
           <h2><span>Explore </span>Our gallery</h2>
