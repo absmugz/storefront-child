@@ -350,7 +350,7 @@ $terms = get_terms( 'service', array(
                     <div class="tab-content col-sm-8 col-xs-12">
                       <div class="tab-pane active">
                         <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
+                          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-dreadlocks.jpg" alt="Dreadlocks or Faux Locs or Marley Hair" class="img-responsive">
                           <h3>Dreadlocks / Faux Locs / marley</h3>
                           <h4>Prices from R25.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
@@ -402,7 +402,7 @@ $terms = get_terms( 'service', array(
                     <div class="tab-content col-sm-8 col-xs-12">
                       <div class="tab-pane active">
                         <div class="varietyContent">
-                          <img src="http://placehold.it/750x400" alt="Image Variety" class="img-responsive">
+                          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-cornrows.jpg" alt="Cornrows" class="img-responsive">
                           <h3>Cornrows</h3>
                           <h4>Prices from R25.00</h4>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
@@ -415,6 +415,60 @@ $terms = get_terms( 'service', array(
                   </div>
                 </div>
 <!-- cornrows -->
+
+<!-- nails -->
+        <div class="tab-pane" id="nails">
+                  <div class="tabbable tabs-left row">
+                    
+                    <?php 
+                 
+                      // args
+                      $args = array(
+                          'post_type' => 'style',          // name of post type.
+                          'tax_query' => array(
+                              array(
+                                  'taxonomy' => 'service',   // taxonomy name
+                                  'field' => 'nails',           // term_id, slug or name
+                                  'terms' => 42,                  // term id, term slug or term name
+                            
+                              )
+                          )
+                      );
+                      
+                      
+                      // query
+                      $the_query = new WP_Query( $args );
+                      
+                      ?>
+                      <?php if( $the_query->have_posts() ): ?>
+                       <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                      		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
+                      	<?php endwhile; ?>
+                      	</ul>
+                      <?php endif; ?>
+                      
+                      <?php wp_reset_query();	 
+                      // Restore global post data stomped by the_post().
+                      ?>
+                    
+                    
+                    
+                    <div class="tab-content col-sm-8 col-xs-12">
+                      <div class="tab-pane active">
+                        <div class="varietyContent">
+                          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-nails.jpg" alt="Nails" class="img-responsive">
+                          <h3>Nails</h3>
+                          <h4>Prices from R25.00</h4>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>      
+<!-- nails -->
 
               </div>
             </div>
