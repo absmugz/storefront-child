@@ -43,6 +43,15 @@ get_header(); ?>
                 <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 5 Comments</a></li>
               </ul>
             </div>
+     <?php       
+            			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
+			
+			?>
+            
+            <!--comments section
             <div class="blogCommnets">
               <h3>3 Comments</h3>
               <div class="media">
@@ -94,7 +103,7 @@ get_header(); ?>
                 <button type="submit" class="btn btn-primary">submit now</button>
               </form>
             </div>
-
+ --> 
 
           </div>
 
