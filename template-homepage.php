@@ -161,6 +161,8 @@ $terms = get_terms( 'service', array(
                                   'taxonomy' => 'service',   // taxonomy name
                                   'field' => 'weaves-wigs',           // term_id, slug or name
                                   'terms' => 39,                  // term id, term slug or term name
+                                  'posts_per_page'=>-1, 
+                                  'numberposts'=>-1
                             
                               )
                           )
@@ -216,8 +218,9 @@ $terms = get_terms( 'service', array(
                               array(
                                   'taxonomy' => 'service',   // taxonomy name
                                   'field' => 'singles',           // term_id, slug or name
-                                  'terms' => 41,                  // term id, term slug or term name
-                            
+                                  'terms' => 41,                 // term id, term slug or term name
+                                  'posts_per_page'=>-1, 
+                                  'numberposts'=>-1
                               )
                           )
                       );
@@ -270,6 +273,8 @@ $terms = get_terms( 'service', array(
                                   'taxonomy' => 'service',   // taxonomy name
                                   'field' => 'hair',           // term_id, slug or name
                                   'terms' => 36,                  // term id, term slug or term name
+                                  'posts_per_page'=>-1, 
+                                  'numberposts'=>-1
                             
                               )
                           )
@@ -323,6 +328,8 @@ $terms = get_terms( 'service', array(
                                   'taxonomy' => 'service',   // taxonomy name
                                   'field' => 'dreadlocks-faux-locs-marley',           // term_id, slug or name
                                   'terms' => 37,                  // term id, term slug or term name
+                                   'posts_per_page'=>-1, 
+                                  'numberposts'=>-1
                             
                               )
                           )
@@ -376,6 +383,8 @@ $terms = get_terms( 'service', array(
                                   'taxonomy' => 'service',   // taxonomy name
                                   'field' => 'cornrows',           // term_id, slug or name
                                   'terms' => 40,                  // term id, term slug or term name
+                                   'posts_per_page'=>-1, 
+                                  'numberposts'=>-1
                             
                               )
                           )
@@ -430,6 +439,8 @@ $terms = get_terms( 'service', array(
                                   'taxonomy' => 'service',   // taxonomy name
                                   'field' => 'nails',           // term_id, slug or name
                                   'terms' => 42,                  // term id, term slug or term name
+                                   'posts_per_page'=>-1, 
+                                  'numberposts'=>-1
                             
                               )
                           )
