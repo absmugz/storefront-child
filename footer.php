@@ -97,7 +97,7 @@
             </div>
             <div class="col-sm-7 col-sm-pull-5 col-xs-12">
               <div class="copyRightText">
-                <p>&copy; 2017 Copyright <a target="_blank" href="http://www.iamabdus.com/">Angel Beauty Spa Salon Bootstrap Template</a> by <a target="_blank" href="http://www.iamabdus.com/">Abdus</a></p>
+                <p>&copy; 2017 Copyright <a target="_blank" href="http://www.allurestudio.co.co.za">Allure Hair & Beauty</a></p>
               </div>
             </div>
           </div>
