@@ -1046,11 +1046,13 @@ $terms = get_terms( 'service', array(
           </div>
           <div class="col-md-4 col-sm-5 col-xs-12">
             <div class="holdingInfo patternbg">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiselit, sed do eiusmod.</p>
+        
+              
+              <p>We would love to hear from you!!</p>
               <ul>
-                <li><i class="fa fa-map-marker" aria-hidden="true"></i> 16/14 Babor Road, Mohammad pur Dhaka, Bangladeshincididunt </li>
-                <li><i class="fa fa-phone" aria-hidden="true"></i> +55 654 545 122 <br>+55 654 545 123</li>
-                <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info @example.com">info @example.com</a> <br><a href="mailto:info2 @example.com">info2@example.com</a></li>
+                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Stanhope Building | Shop 2 | Cnr Old Stanhope & Main Rds | Claremont</li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i>081 332 4498 <br>021 674 0403</li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@allurestudio.co.za">info@allurestudio.co.za</a></li>
               </ul>
             </div>
           </div>
