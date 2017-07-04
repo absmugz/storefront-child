@@ -496,7 +496,7 @@ $terms = get_terms( 'service', array(
       
 
 
-<!-- OFFERS SECTION -->
+<!-- OFFERS SECTION 
     <section class="clearfix offersSection patternbg">
       <div class="container">
         <div class="row">
@@ -538,92 +538,10 @@ $terms = get_terms( 'service', array(
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 
-<!-- PRODUCT SECTION -->
-    <section class="clearfix productSection">
-      <div class="container">
-        <div class="secotionTitle">
-          <h2><span>Natural </span>Our Products</h2>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-          <div id="productSlider" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#productSlider" data-slide-to="0" class="active"></li>
-                <li data-target="#productSlider" data-slide-to="1"></li>
-              </ol>
 
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <div class="row">
-                    <div class="col-sm-6 col-xs-12">
-                      <div class="productImage">
-                        <img src="http://placehold.it/570x400" alt="Image Product" class="img-responsive">
-                        <a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-xs-12">
-                      <div class="productInfo">
-                        <h3>Traditional Massage</h3>
-                        <h4>$25.00 Per Head</h4>
-                        <ul class="list-inline rating">
-                          <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria tur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese runt mollit anim id est laborum. </p>
-                        <a href="#" class="btn btn-primary first-btn">read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="row">
-                    <div class="col-sm-6 col-xs-12">
-                      <div class="productImage">
-                        <img src="http://placehold.it/570x400" alt="Image Product" class="img-responsive">
-                        <a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-xs-12">
-                      <div class="productInfo">
-                        <h3>Body Massage</h3>
-                        <h4>$55.00 Per Head</h4>
-                        <ul class="list-inline rating">
-                          <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                        </ul>
-                        <p>Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria tur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese runt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <a href="#" class="btn btn-primary first-btn">read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Left and right controls -->
-              <a class="left carousel-control" href="#productSlider" role="button" data-slide="prev">
-                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#productSlider" role="button" data-slide="next">
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
 <!-- REVIEW SECTION -->
     <section class="clearfix reviewSection patternbg">
@@ -675,13 +593,15 @@ $terms = get_terms( 'service', array(
         </div>
       </div>
     </section>
+    
     <section class="container-fluid clearfix homeGallery">
+      
       <div class="row">
         <div class="col-xs-12">
           <div class="filter-container isotopeFilters">
             <ul class="list-inline filter">
               <li class="active"><a href="#" data-filter="*">all item</a></li>
-              <li><a href="#" data-filter=".hair">hair</a></li>
+              <li><a href="#" data-filter=".weaves-wigs">Weaves & Wigs</a></li>
               <li><a href="#" data-filter=".makeup">Make Up</a></li>
               <li><a href="#" data-filter=".facial">Facial</a></li>
               <li><a href="#" data-filter=".massage">Massage</a></li>
@@ -689,8 +609,9 @@ $terms = get_terms( 'service', array(
           </div>
         </div>
       </div>
+      
       <div class="row isotopeContainer" id="container">
-        <div class="col-sm-3 isotopeSelector hair">
+        <div class="col-sm-3 isotopeSelector weaves-wigs">
           <article class="">
             <figure>
               <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
@@ -698,11 +619,13 @@ $terms = get_terms( 'service', array(
                 <div class="inner"></div>
               </div>
               <div class="overlay">
-                <a class="fancybox-pop" rel="portfolio-1" href="http://placehold.it/960x740">
+                <a data-fresco-group='weaves-wigs' class="fancybox-pop fresco" href="http://placehold.it/960x740">
+               
                   <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Skin Care</h5>
+                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Weaves & Wigs</h5>
                   </div>
                 </a>
+                <a data-fresco-group='weaves-wigs' class="fresco" href="http://placehold.it/360x200"></a>  
               </div>
             </figure>
           </article>
@@ -837,7 +760,7 @@ $terms = get_terms( 'service', array(
       </div>
     </section>
 
-<!-- CALL TO ACTION SECTION -->
+<!-- CALL TO ACTION SECTION 
     <section class="clearfix callAction">
       <div class="container">
         <div class="row">
@@ -851,7 +774,7 @@ $terms = get_terms( 'service', array(
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 
 <!-- EXPERT SECTION -->
     <section class="clearfix expertSection">
@@ -1088,99 +1011,7 @@ $terms = get_terms( 'service', array(
     </section>
 
 <!-- PRICING SECTION -->
-    <section class="clearfix pricingSection patternbg">
-      <div class="container">
-        <div class="secotionTitle">
-          <h2><span>Amazing </span>Services Pricing</h2>
-        </div>
-        <div class="row">
-          <div class="col-sm-3 col-xs-12">
-            <div class="priceTableWrapper">
-              <div class="priceImage" style="background-image: url(http://placehold.it/330x220);">
-                <div class="maskImage">
-                  <h3>Spa Light</h3>
-                </div>
-                <div class="priceTag">
-                  <h4>$59</h4>
-                </div>
-              </div>
-              <div class="priceInfo">
-                <ul class="list-unstyled">
-                  <li>Body Hand and Foot Massage</li>
-                  <li>Nail Cutting And Styling</li>
-                  <li>Spa Therapy</li>
-                  <li>Hair Coloring</li>
-                </ul>
-                <a href="#" class="btn btn-primary first-btn">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-xs-12">
-            <div class="priceTableWrapper">
-              <div class="priceImage" style="background-image: url(http://placehold.it/330x220);">
-                <div class="maskImage">
-                  <h3>oil massage</h3>
-                </div>
-                <div class="priceTag">
-                  <h4>$79</h4>
-                </div>
-              </div>
-              <div class="priceInfo">
-                <ul class="list-unstyled">
-                  <li>Body Hand and Foot Massage</li>
-                  <li>Nail Cutting And Styling</li>
-                  <li>Spa Therapy</li>
-                  <li>Hair Coloring</li>
-                </ul>
-                <a href="#" class="btn btn-primary first-btn">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-xs-12">
-            <div class="priceTableWrapper">
-              <div class="priceImage" style="background-image: url(http://placehold.it/330x220);">
-                <div class="maskImage">
-                  <h3>Spa & Beauty</h3>
-                </div>
-                <div class="priceTag">
-                  <h4>$85</h4>
-                </div>
-              </div>
-              <div class="priceInfo">
-                <ul class="list-unstyled">
-                  <li>Body Hand and Foot Massage</li>
-                  <li>Nail Cutting And Styling</li>
-                  <li>Spa Therapy</li>
-                  <li>Hair Coloring</li>
-                </ul>
-                <a href="#" class="btn btn-primary first-btn">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-xs-12">
-            <div class="priceTableWrapper">
-              <div class="priceImage" style="background-image: url(http://placehold.it/330x220);">
-                <div class="maskImage">
-                  <h3>Relax Day</h3>
-                </div>
-                <div class="priceTag">
-                  <h4>$99</h4>
-                </div>
-              </div>
-              <div class="priceInfo">
-                <ul class="list-unstyled">
-                  <li>Body Hand and Foot Massage</li>
-                  <li>Nail Cutting And Styling</li>
-                  <li>Spa Therapy</li>
-                  <li>Hair Coloring</li>
-                </ul>
-                <a href="#" class="btn btn-primary first-btn">Buy Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
 <!-- CONTACT US SECTION -->
     <section class="clearfix contactSection">

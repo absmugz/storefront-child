@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){
+jQuery(document).ready(function($) {
   'use strict';
 
   //============================== MENU SCROLL =========================
@@ -269,6 +269,15 @@ jQuery(document).ready(function(){
       'speedOut'    : 200,
       'overlayShow' : false
     });
+    
+    
+$('.fancybox-pop').fancybox({
+      'transitionIn'  : 'elastic',
+      'transitionOut' : 'elastic',
+      'speedIn'   : 600,
+      'speedOut'    : 200,
+      'overlayShow' : false
+});
 
   //============================== SINGLE SERVICE LEFT TAB =========================
   $('#singleServiceTab a').on('click', function (e) {
@@ -294,6 +303,10 @@ jQuery(document).ready(function(){
   });
 
 
-    smoothScroll.init();
+  
 
 });
+
+
+
+
