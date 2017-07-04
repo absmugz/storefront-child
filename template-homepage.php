@@ -602,9 +602,11 @@ $terms = get_terms( 'service', array(
             <ul class="list-inline filter">
               <li class="active"><a href="#" data-filter="*">all item</a></li>
               <li><a href="#" data-filter=".weaves-wigs">Weaves & Wigs</a></li>
-              <li><a href="#" data-filter=".makeup">Make Up</a></li>
-              <li><a href="#" data-filter=".facial">Facial</a></li>
-              <li><a href="#" data-filter=".massage">Massage</a></li>
+              <li><a href="#" data-filter=".singles">Singles</a></li>
+              <li><a href="#" data-filter=".cornrows">Cornrows</a></li>
+              <li><a href="#" data-filter=".dreadlocks">Dreadlocks / Faux locs / Marley</a></li>
+              <li><a href="#" data-filter=".hair">Hair & Hair Cuts</a></li>
+              <li><a href="#" data-filter=".nails">Nails</a></li>
             </ul>
           </div>
         </div>
@@ -614,54 +616,91 @@ $terms = get_terms( 'service', array(
         <div class="col-sm-3 isotopeSelector weaves-wigs">
           <article class="">
             <figure>
-              <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
+              
+             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">
+          
               <div class="overlay-background">
                 <div class="inner"></div>
               </div>
               <div class="overlay">
-                <a data-fresco-group='weaves-wigs' class="fancybox-pop fresco" href="http://placehold.it/960x740">
+                
+               
+                <a data-fresco-group='weaves-wigs' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/1.jpg">
                
                   <div class="overlayInfo">
                     <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Weaves & Wigs</h5>
                   </div>
                 </a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="http://placehold.it/360x200"></a>  
+                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/2.jpg"></a>
+                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/3.jpg"></a>
+                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/4.jpg"></a>
+                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/5.jpg"></a>
               </div>
             </figure>
           </article>
         </div>
 
-        <div class="col-sm-3 isotopeSelector makeup">
+        <div class="col-sm-3 isotopeSelector singles">
           <article class="">
             <figure>
-              <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-singles.jpg" alt="Singles" class="img-responsive">
+             
               <div class="overlay-background">
                 <div class="inner"></div>
               </div>
               <div class="overlay">
-                <a class="fancybox-pop" rel="portfolio-1" href="http://placehold.it/960x740">
+               
+                  <a data-fresco-group='singles' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/singles/1.jpg">
                   <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Skin Care</h5>
+                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Singles</h5>
                   </div>
                 </a>
+                <a data-fresco-group='singles' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/singles/2.jpg"></a>
+                <a data-fresco-group='singles' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/singles/3.jpg"></a>
               </div>
             </figure>
           </article>
         </div>
 
-        <div class="col-sm-3 isotopeSelector massage">
+        <div class="col-sm-3 isotopeSelector cornrows">
           <article class="">
             <figure>
-              <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-cornrows.jpg" alt="Cornrows" class="img-responsive">
               <div class="overlay-background">
                 <div class="inner"></div>
               </div>
               <div class="overlay">
-                <a class="fancybox-pop" rel="portfolio-1" href="http://placehold.it/960x740">
+                 <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/1.jpg">
                   <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Skin Care</h5>
+                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Cornrows</h5>
                   </div>
                 </a>
+                 <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/2.jpg"></a>
+                  <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/3.jpg"></a>
+                   <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/4.jpg"></a>
+                    <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/5.jpg"></a>
+                     <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/6.jpg"></a>
+                      <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/7.jpg"></a>
+              </div>
+            </figure>
+          </article>
+        </div>
+
+        <div class="col-sm-3 isotopeSelector dreadlocks">
+          <article class="">
+            <figure>
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-dreadlocks.jpg" alt="Dreadlocks / Faux locs / Marley" class="img-responsive">
+              <div class="overlay-background">
+                <div class="inner"></div>
+              </div>
+              <div class="overlay">
+                <a data-fresco-group='dreadlocks' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/dreadlocks/1.jpg">
+                  <div class="overlayInfo">
+                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Dreadlocks / Faux locs / Marley</h5>
+                  </div>
+                </a>
+                 <a data-fresco-group='dreadlocks' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/dreadlocks/2.jpg"></a>
+                 <a data-fresco-group='dreadlocks' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/dreadlocks/3.jpg"></a>
               </div>
             </figure>
           </article>
@@ -670,92 +709,47 @@ $terms = get_terms( 'service', array(
         <div class="col-sm-3 isotopeSelector hair">
           <article class="">
             <figure>
-              <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-hair.jpg" alt="Hair & Hair Cuts" class="img-responsive">
               <div class="overlay-background">
                 <div class="inner"></div>
               </div>
               <div class="overlay">
-                <a class="fancybox-pop" rel="portfolio-1" href="http://placehold.it/960x740">
+                <a data-fresco-group='hair' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/hair/1.jpg">
                   <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Skin Care</h5>
+                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Hair & Hair Cuts</h5>
                   </div>
                 </a>
+                 <a data-fresco-group='hair' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/hair/2.jpg"></a>
+                  <a data-fresco-group='hair' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/hair/3.jpg"></a>
+                   <a data-fresco-group='hair' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/hair/4.jpg"></a>
               </div>
             </figure>
           </article>
         </div>
 
-        <div class="col-sm-3 isotopeSelector makeup">
+        <div class="col-sm-3 isotopeSelector nails">
           <article class="">
             <figure>
-              <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
+               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-nails.jpg" alt="Hair & Hair Cuts" class="img-responsive">
               <div class="overlay-background">
                 <div class="inner"></div>
               </div>
               <div class="overlay">
-                <a class="fancybox-pop" rel="portfolio-1" href="http://placehold.it/960x740">
+                <a data-fresco-group='nails' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/nails/1.jpg">
                   <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Skin Care</h5>
+                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Nails</h5>
                   </div>
                 </a>
+                 
+                  <a data-fresco-group='nails' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/nails/2.jpg"></a>
+                  <a data-fresco-group='nails' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/nails/3.jpg"></a>
               </div>
             </figure>
           </article>
         </div>
 
-        <div class="col-sm-3 isotopeSelector facial">
-          <article class="">
-            <figure>
-              <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-                <a class="fancybox-pop" rel="portfolio-1" href="http://placehold.it/960x740">
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Skin Care</h5>
-                  </div>
-                </a>
-              </div>
-            </figure>
-          </article>
-        </div>
-
-        <div class="col-sm-3 isotopeSelector facial">
-          <article class="">
-            <figure>
-              <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-                <a class="fancybox-pop" rel="portfolio-1" href="http://placehold.it/960x740">
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Skin Care</h5>
-                  </div>
-                </a>
-              </div>
-            </figure>
-          </article>
-        </div>
-
-        <div class="col-sm-3 isotopeSelector massage">
-          <article class="">
-            <figure>
-              <img src="http://placehold.it/500x375" alt="Image Gallery" class="img-responsive">
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-                <a class="fancybox-pop" rel="portfolio-1" href="http://placehold.it/960x740">
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Skin Care</h5>
-                  </div>
-                </a>
-              </div>
-            </figure>
-          </article>
-        </div>
+       
+       
 
       </div>
     </section>
