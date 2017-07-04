@@ -134,7 +134,8 @@ add_action( 'init', 'remove_sf_actions' );
                 <a href="<?php bloginfo('url');?>/home/">Home</a>
               </li>
               <li>
-                <a data-scroll href="#about" class="scrolling">About us</a>
+                
+                <a href="#about" class="scrolling">About us</a>
               </li>
               <li>
                 <a href="#services" class="scrolling">Services</a>

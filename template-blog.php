@@ -51,11 +51,11 @@ if ( $the_query->have_posts() ) : ?>
 	     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></h2>
 	
 	  <p><?php the_excerpt(); ?></p>
-              <ul class="list-inline">
+             <!-- <ul class="list-inline">
                 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Admin</a></li>
                 <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 21 Likes</a></li>
                 <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 5 Comments</a></li>
-              </ul>
+              </ul>-->
 		
 	</div>
     <?php endwhile; ?>
