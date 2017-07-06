@@ -174,6 +174,8 @@ jQuery(document).ready(function($) {
     $('html, body').animate({ scrollTop: 0 }, 1500);
       return false;
   });
+  
+  
 
   //============================== SMOOTH SCROLLING TO SECTION =========================
   $('.scrolling  a[href*="#"]').on('click', function (e) {
@@ -187,6 +189,19 @@ jQuery(document).ready(function($) {
       mobileHA: false
     });
   });
+  
+  
+$('a[href^="#"]').on('click',function(e){
+    e.preventDefault();
+
+    var target = this.hash,
+    $target = $(target);
+
+$('html, body').stop().animate({
+    'scrollTop':$target.offset().top - 64}, 900, 'swing', function () {
+        window.location.hash = target;
+    });
+});
 
   //============================== DATE-PICKER =========================
   $('.datepicker').datepicker({

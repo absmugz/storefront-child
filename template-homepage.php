@@ -77,7 +77,7 @@ get_header(); ?>
     
 
 <!-- ABOUT SECTION -->
-    <section class="container-fluid clearfix aboutSection patternbg" id="about" >
+    <section id="about" class="container-fluid clearfix aboutSection patternbg">
       <div class="aboutInner">
         <div class="sepcialContainer">
           <div class="row">
