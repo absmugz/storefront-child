@@ -203,6 +203,9 @@ $('html, body').stop().animate({
     });
 });
 
+
+
+
   //============================== DATE-PICKER =========================
   $('.datepicker').datepicker({
     startDate: 'dateToday',

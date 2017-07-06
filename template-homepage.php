@@ -12,6 +12,77 @@
  * @package storefront
  */
 
+ 
+  //response generation function
+
+  $response = "";
+
+  //function to generate response
+  function my_contact_form_generate_response($type, $message){
+
+    global $response;
+
+    if($type == "success") $response = "<div class='success'>{$message}</div>";
+    else $response = "<div class='error'>{$message}</div>";
+
+  }
+
+  //response messages
+  $not_human       = "Human verification incorrect.";
+  $missing_content = "Please supply all information.";
+  $email_invalid   = "Email Address Invalid.";
+  $message_unsent  = "Message was not sent. Try Again.";
+  $message_sent    = "Thanks! Your message has been sent.";
+
+  //user posted variables
+  $name = $_POST['message_name'];
+  $email = $_POST['message_email'];
+  $message = $_POST['message_text'];
+  $human = $_POST['message_human'];
+
+  //php mailer variables
+  $to = get_option('admin_email');
+  $subject = "Someone sent a message from ".get_bloginfo('name');
+  $headers = 'From: '. $email . "\r\n" .
+    'Reply-To: ' . $email . "\r\n";
+    
+// Subject of confirmation email.
+$conf_subject = 'Your recent enquiry';
+
+// Who should the confirmation email be from?
+$conf_sender = 'Allure Hair & Beauty <no-reply@allurestudio.co.za>';
+
+$msg = $name . ",\n\nThank you for your recent enquiry. A member of our 
+team will respond to your message as soon as possible.";
+
+mail( $email, $conf_subject, $msg, 'From: ' . $conf_sender );
+
+
+  if(!$human == 0){
+    if($human != 2) my_contact_form_generate_response("error", $not_human); //not human!
+    else {
+
+      //validate email
+      if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+        my_contact_form_generate_response("error", $email_invalid);
+      else //email is valid
+      {
+        //validate presence of name and message
+        if(empty($name) || empty($message)){
+          my_contact_form_generate_response("error", $missing_content);
+        }
+        else //ready to go!
+        {
+          $sent = wp_mail($to, $subject, strip_tags($message), $headers);
+          if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
+          else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+        }
+      }
+    }
+  }
+  else if ($_POST['submitted']) my_contact_form_generate_response("error", $missing_content);
+
+
 get_header(); ?>
 
 
@@ -1019,8 +1090,8 @@ $terms = get_terms( 'service', array(
               <h3>Get in touch</h3>
             </div>
             <div class="contactForm">
-               <?php echo $response; ?>
-               <form action="<?php the_permalink(); ?>" method="post">
+              <?php echo $response; ?>
+                <form action="<?php the_permalink(); ?>" method="post">
               <div class="form-group">
                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Your Name" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>">
                 </div>
@@ -1028,13 +1099,23 @@ $terms = get_terms( 'service', array(
                   <input type="email" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>" class="form-control" id="exampleInputEmail1" placeholder="Your Email">
                
                 </div>
+                <!--
                 <div class="form-group">
                   <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Your Phone">
                 </div>
+                -->
+                
+                
                 <div class="form-group">
-                 
+                Human Verification: ? + 3 = 5<br>
+                  <input type="text" class="form-control" id="exampleInputPassword1" name="message_human" placeholder="Human Verification">
+                </div>
+                
+                
+                <div class="form-group">
                   <textarea class="form-control" placeholder="Your Message" type="text" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
                 </div>
+                
                  <input type="hidden" name="submitted" value="1">
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary first-btn">send Message</button>
