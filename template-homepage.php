@@ -1094,10 +1094,9 @@ $terms = get_terms( 'service', array(
                 <form action="<?php the_permalink(); ?>" method="post">
               <div class="form-group">
   
-                 
+                  <input type="email" class="form-control" id="email" placeholder="Your Name" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>" required>
                   
-                  <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name." value="<?php echo esc_attr($_POST['message_name']); ?>">
-                                    <p class="help-block text-danger"></p>
+                  
                 </div>
                 <div class="form-group">
                   <input type="email" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>" class="form-control" id="exampleInputEmail1" placeholder="Your Email">
@@ -1233,7 +1232,7 @@ $terms = get_terms( 'service', array(
               <h5>Personal info</h5>
             </div>
             <div class="form-group form-half form-left">
-              <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Full name">
+              <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Full name" required>
             </div>
             <div class="form-group form-half form-right">
               <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Your email">
@@ -1247,12 +1246,13 @@ $terms = get_terms( 'service', array(
             <div class="form-group">
               <textarea class="form-control" placeholder="Your Message"></textarea>
             </div>
+            <div class="form-group">
+            <button type="submit" class="btn btn-primary first-btn">Submit Now</button>
+          </div>
           </form>
         </div>
         <div class="modal-footer">
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary first-btn">Submit Now</button>
-          </div>
+          
         </div>
       </div>
     </div>
