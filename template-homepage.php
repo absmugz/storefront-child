@@ -1093,7 +1093,11 @@ $terms = get_terms( 'service', array(
               <?php echo $response; ?>
                 <form action="<?php the_permalink(); ?>" method="post">
               <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Your Name" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>">
+  
+                 
+                  
+                  <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name." value="<?php echo esc_attr($_POST['message_name']); ?>">
+                                    <p class="help-block text-danger"></p>
                 </div>
                 <div class="form-group">
                   <input type="email" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>" class="form-control" id="exampleInputEmail1" placeholder="Your Email">

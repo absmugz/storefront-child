@@ -204,7 +204,7 @@ $('html, body').stop().animate({
 });
 
 
-
+$("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
 
   //============================== DATE-PICKER =========================
   $('.datepicker').datepicker({
