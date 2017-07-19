@@ -1089,43 +1089,28 @@ $terms = get_terms( 'service', array(
             <div class="contactTitle">
               <h3>Get in touch</h3>
             </div>
-            <div class="contactForm">
-              <?php echo $response; ?>
-                <form action="<?php the_permalink(); ?>" method="post">
+      <div class="contactForm">
+             
+                <form action="<?php the_permalink(); ?>" id="contactForm" method="post">
               <div class="form-group">
-  
-                  <input type="email" class="form-control" id="email" placeholder="Your Name" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>" required>
-                  
-                  
+                  <input type="text" class="form-control" placeholder="Your Name" name="firstName">
+        
                 </div>
                 <div class="form-group">
-                  <input type="email" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>" class="form-control" id="exampleInputEmail1" placeholder="Your Email">
-               
+                  <input type="email" class="form-control" placeholder="Your Email" name="email">
                 </div>
-                <!--
                 <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Your Phone">
+                  <input type="text" class="form-control" id="exampleInputPassword1" name="phoneNumber" placeholder="Your Phone">
                 </div>
-                -->
-                
-                
                 <div class="form-group">
-                Human Verification: ? + 3 = 5<br>
-                  <input type="text" class="form-control" id="exampleInputPassword1" name="message_human" placeholder="Human Verification">
+    
+                  <textarea class="form-control" name="message" rows="7" placeholder="Your Message"></textarea>
                 </div>
-                
-                
-                <div class="form-group">
-                  <textarea class="form-control" placeholder="Your Message" type="text" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
-                </div>
-                
-                 <input type="hidden" name="submitted" value="1">
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary first-btn">send Message</button>
+                  
                 </div>
               </form>
-              
-
             </div>
           </div>
           <div class="col-md-4 col-sm-5 col-xs-12">
@@ -1205,10 +1190,11 @@ $terms = get_terms( 'service', array(
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Appointment For Hair Color</h4>
+          <h4 class="modal-title">Appointment For Hair Service</h4>
         </div>
         <div class="modal-body">
-          <form action="">
+    
+            <form action="<?php the_permalink(); ?>" id="appointmentForm" method="post">
             <div class="form-group categoryTitle">
               <h5>Service Date and Time</h5>
             </div>
@@ -1232,16 +1218,16 @@ $terms = get_terms( 'service', array(
               <h5>Personal info</h5>
             </div>
             <div class="form-group form-half form-left">
-              <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Full name" required>
+               <input type="text" class="form-control" name="firstName" placeholder="First name" />
             </div>
             <div class="form-group form-half form-right">
-              <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Your email">
+                <input type="text" class="form-control" name="email" placeholder="Your Email"/>
             </div>
             <div class="form-group form-half form-left">
-              <input type="text" class="form-control" id="exampleInputEmail4" placeholder="Phone number">
+              <input type="text" class="form-control" placeholder="Phone number">
             </div>
             <div class="form-group form-half form-right">
-              <input type="text" class="form-control" id="exampleInputEmail5" placeholder="Your address">
+              <input type="text" class="form-control" placeholder="Your address">
             </div>
             <div class="form-group">
               <textarea class="form-control" placeholder="Your Message"></textarea>

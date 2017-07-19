@@ -204,7 +204,114 @@ $('html, body').stop().animate({
 });
 
 
-$("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+//$("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+
+//$("#contactForm input,#contactForm textarea").jqBootstrapValidation();
+
+//$("#appointmentForm input").jqBootstrapValidation();
+
+
+    $('#contactForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstName: {
+                validators: {
+                    notEmpty: {
+                        message: 'The first name is required'
+                    }
+                }
+            },
+            phoneNumber: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The phone number is required'
+                        },
+                        regexp: {
+                            message: 'The phone number can only contain the digits, spaces, -, (, ), + and .',
+                            regexp: /^[0-9\s\-()+\.]+$/
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The email address is required'
+                        },
+                        emailAddress: {
+                            message: 'The input is not a valid email address'
+                        }
+                    }
+                },
+                message: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The message is required'
+                        },
+                        stringLength: {
+                            max: 20,
+                            message: 'The message must be less than 20 characters long'
+                        }
+                    }
+                }
+        }
+    });
+
+
+    $('#appointmentForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstName: {
+                validators: {
+                    notEmpty: {
+                        message: 'The first name is required'
+                    }
+                }
+            },
+            phoneNumber: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The phone number is required'
+                        },
+                        regexp: {
+                            message: 'The phone number can only contain the digits, spaces, -, (, ), + and .',
+                            regexp: /^[0-9\s\-()+\.]+$/
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The email address is required'
+                        },
+                        emailAddress: {
+                            message: 'The input is not a valid email address'
+                        }
+                    }
+                },
+                message: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The message is required'
+                        },
+                        stringLength: {
+                            max: 20,
+                            message: 'The message must be less than 20 characters long'
+                        }
+                    }
+                }
+        }
+    });
+
 
   //============================== DATE-PICKER =========================
   $('.datepicker').datepicker({
@@ -316,8 +423,10 @@ $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
 
 
   
-
 });
+
+
+
 
 
 
