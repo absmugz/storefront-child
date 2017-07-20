@@ -1199,20 +1199,28 @@ $terms = get_terms( 'service', array(
               <h5>Service Date and Time</h5>
             </div>
             <div class="dateSelect form-half form-left">
+              
               <div class="input-group date ed-datepicker filterDate" data-provide="datepicker">
-                <input type="text" class="form-control" placeholder="MM/DD/YYYY">
+                <input type="text" class="form-control" placeholder="MM/DD/YYYY" name"meeting">
                 <div class="input-group-addon">
                   <span class="fa fa-calendar"></span>
                 </div>
               </div>
+              
+              
             </div>
             <div class="timeSelect form-half form-right">
-              <select name="guiest_id1" id="guiest_id1" class="select-drop">
+         
+      
+              
+        <select class="form-control" name="time" id="time" data-width="100%">
+        <option value=""></option>
                 <option value="0">10.00 AM</option>
                 <option value="1">9.00 AM</option>
                 <option value="2">8.00 AM</option>
                 <option value="3">11.00 AM</option>
-              </select>
+      </select>
+   
             </div>
             <div class="form-group categoryTitle">
               <h5>Personal info</h5>

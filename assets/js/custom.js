@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
   });
 
   //============================== SELECT BOX =========================
-  $('.select-drop').selectbox();
+  //$('.select-drop').selectbox();
 
   //============================== header =========================
 
@@ -190,7 +190,7 @@ jQuery(document).ready(function($) {
     });
   });
   
-  
+/*
 $('a[href^="#"]').on('click',function(e){
     e.preventDefault();
 
@@ -202,7 +202,7 @@ $('html, body').stop().animate({
         window.location.hash = target;
     });
 });
-
+*/
 
 //$("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
 
@@ -261,8 +261,25 @@ $('html, body').stop().animate({
         }
     });
 
+  //============================== DATE-PICKER =========================
+  
+  $('.datepicker').datepicker({
+    startDate: 'dateToday',
+    autoclose: true
+  });
+  
+  
+    //============================== DATE-PICKER VALIDATION =========================
+  
 
-    $('#appointmentForm').formValidation({
+    $('#appointmentForm').find('[name="time"]')
+            .selectpicker()
+            .change(function(e) {
+                /* Revalidate the language when it is changed */
+                $('#appointmentForm').formValidation('revalidateField', 'time');
+            })
+            .end()
+    .formValidation({
         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
@@ -308,16 +325,35 @@ $('html, body').stop().animate({
                             message: 'The message must be less than 20 characters long'
                         }
                     }
+                },
+                meeting: {
+                 validators: {
+                    notEmpty: {
+                        message: 'The date is required'
+                    },
+                    date: {
+                        format: 'MM/DD/YYYY h:m A',
+                        message: 'The value is not a valid date'
+                    }
+                }
+            },
+                time: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select time.'
+                        }
+                    }
                 }
         }
     });
+    
+    
+     $('.datepicker').on('dp.change dp.show', function(e) {
+        $('#appointmentForm').formValidation('revalidateField', 'meeting');
+    });
 
 
-  //============================== DATE-PICKER =========================
-  $('.datepicker').datepicker({
-    startDate: 'dateToday',
-    autoclose: true
-  });
+
 
   //============================== COUNT DOWN =========================
   $('#simple_timer').syotimer({
