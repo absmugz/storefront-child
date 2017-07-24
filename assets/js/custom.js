@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
   });
 
   //============================== SELECT BOX =========================
-  //$('.select-drop').selectbox();
+$('.select-drop').selectbox();
 
   //============================== header =========================
 
@@ -263,23 +263,33 @@ $('html, body').stop().animate({
 
   //============================== DATE-PICKER =========================
   
-  $('.datepicker').datepicker({
+  /*$('.datepicker').datepicker({
     startDate: 'dateToday',
     autoclose: true
-  });
+  });*/
+  
+  
+$('#startdate')    // <=== You forgot to change from #datePicker to #startdate
+        .datepicker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#form1').formValidation('revalidateField', 'startdate');
+        });
   
   
     //============================== DATE-PICKER VALIDATION =========================
-  
+  $('#startdate')
+        .datepicker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#appointmentForm').formValidation('revalidateField', 'startdate');
+        });
 
-    $('#appointmentForm').find('[name="time"]')
-            .selectpicker()
-            .change(function(e) {
-                /* Revalidate the language when it is changed */
-                $('#appointmentForm').formValidation('revalidateField', 'time');
-            })
-            .end()
-    .formValidation({
+    $('#form1').formValidation({
         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
@@ -287,70 +297,22 @@ $('html, body').stop().animate({
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            firstName: {
+            startdate: {
                 validators: {
-                    notEmpty: {
-                        message: 'The first name is required'
-                    }
-                }
-            },
-            phoneNumber: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The phone number is required'
-                        },
-                        regexp: {
-                            message: 'The phone number can only contain the digits, spaces, -, (, ), + and .',
-                            regexp: /^[0-9\s\-()+\.]+$/
-                        }
-                    }
-                },
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The email address is required'
-                        },
-                        emailAddress: {
-                            message: 'The input is not a valid email address'
-                        }
-                    }
-                },
-                message: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The message is required'
-                        },
-                        stringLength: {
-                            max: 20,
-                            message: 'The message must be less than 20 characters long'
-                        }
-                    }
-                },
-                meeting: {
-                 validators: {
                     notEmpty: {
                         message: 'The date is required'
                     },
                     date: {
-                        format: 'MM/DD/YYYY h:m A',
-                        message: 'The value is not a valid date'
+                        format: 'MM/DD/YYYY',
+                        message: 'The date is not a valid'
                     }
                 }
-            },
-                time: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Please select time.'
-                        }
-                    }
-                }
+            }
         }
     });
+
+  
     
-    
-     $('.datepicker').on('dp.change dp.show', function(e) {
-        $('#appointmentForm').formValidation('revalidateField', 'meeting');
-    });
 
 
 
@@ -370,7 +332,7 @@ $('html, body').stop().animate({
   var priceMin = $( '#price-amount-1' );
   var priceMax = $( '#price-amount-2' );
 
-  $( '#price-range' ).slider({
+  /*$( '#price-range' ).slider({
     range: true,
     min: minimum,
     max: maximum,
@@ -379,10 +341,10 @@ $('html, body').stop().animate({
       priceMin.val( '$' + ui.values[ 0 ] );
       priceMax.val( '$' + ui.values[ 1 ] );
     }
-  });
+  });*/
 
-  priceMin.val( '$' + $( '#price-range' ).slider( 'values', 0 ));
-  priceMax.val( '$' + $( '#price-range' ).slider( 'values', 1 ));
+  //priceMin.val( '$' + $( '#price-range' ).slider( 'values', 0 ));
+  //priceMax.val( '$' + $( '#price-range' ).slider( 'values', 1 ));
 
 
   //============================== BOOTSTRAP CAROUSEL SWIEP =========================
