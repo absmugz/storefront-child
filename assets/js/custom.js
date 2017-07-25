@@ -290,6 +290,20 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
                 $('#appointmentForm').formValidation('revalidateField', 'guiest_id1');
             })
             .end()
+            .find('[name="style"]')
+            .selectpicker()
+            .change(function(e) {
+                /* Revalidate the language when it is changed */
+                $('#appointmentForm').formValidation('revalidateField', 'style');
+            })
+            .end()
+            .find('[name="stylist"]')
+            .selectpicker()
+            .change(function(e) {
+                /* Revalidate the language when it is changed */
+                $('#appointmentForm').formValidation('revalidateField', 'stylist');
+            })
+            .end()
     .formValidation({
         framework: 'bootstrap',
         icon: {
@@ -352,6 +366,27 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
                     validators: {
                         notEmpty: {
                             message: 'Please select your time.'
+                        }
+                    }
+                },
+                style: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select your style.'
+                        }
+                    }
+                },
+                stylist: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select your stylist.'
+                        }
+                    }
+                },
+                notes: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The notes are required.'
                         }
                     }
                 }

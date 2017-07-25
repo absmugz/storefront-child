@@ -1207,12 +1207,19 @@ $terms = get_terms( 'service', array(
               
             </div>
             <div class="form-group timeSelect form-half form-right">
-              <select name="guiest_id1" id="guiest_id1" class="select-drop">
+              <select name="guiest_id1" id="guiest_id1">
                 <option value=""></option>
-                <option value="0">10.00 AM</option>
-                <option value="1">9.00 AM</option>
-                <option value="2">8.00 AM</option>
-                <option value="3">11.00 AM</option>
+                <option value="8">8.00 AM</option>
+                <option value="9">9.00 AM</option>
+                <option value="10">10.00 AM</option>
+                <option value="11">11.00 AM</option>
+                <option value="12">12.00 AM</option>
+                <option value="1">13.00 PM</option>
+                <option value="2">14.00 PM</option>
+                <option value="3">15.00 PM</option>
+                <option value="4">16.00 PM</option>
+                <option value="5">17.00 PM</option>
+                <option value="6">18.00 PM</option>
               </select>
             </div>
             <div class="form-group categoryTitle">
@@ -1225,16 +1232,43 @@ $terms = get_terms( 'service', array(
                 <input type="text" class="form-control" name="email" placeholder="Your Email"/>
             </div>
             <div class="form-group form-half form-left">
-              <input type="text" class="form-control" placeholder="Phone number">
+               <select name="style" id="style">
+                <option value=""></option>
+            
+                <option value="Weaves & wigs">Weaves & Wigs</option>
+                <option value="Singles">Singles</option>
+                <option value="Cornrows">Cornrows</option>
+                <option value="Dreadlocks">Dreadlocks</option>
+                <option value="Faux Locs">Faux Locs</option>
+                <option value="Marley">Marley</option>
+                <option value="Hair Cuts">Hair Cuts</option>
+                <option value="Natural Hair">Natural Hair</option>
+                <option value="Other">Other</option>
+                <option value="Nails">Nails</option>
+          
+              </select>
+             
             </div>
             <div class="form-group form-half form-right">
-              <input type="text" class="form-control" placeholder="Your address">
+              <select name="stylist" id="stylist">
+                <option value=""></option>
+            
+                <option value="Lillie">Lillie</option>
+                <option value="Rachel">Rachel</option>
+                <option value="Ntokozo">Ntokozo</option>
+                <option value="Jane">Jane</option>
+                 <option value="Mamu">Mamu</option>
+                 <option value="New customer">New customer, no one specific</option>
+                 <option value="No one specific">No one specific</option>
+                
+          
+              </select>
             </div>
             <div class="form-group">
-              <textarea class="form-control" placeholder="Your Message"></textarea>
+              <textarea class="form-control" placeholder="Your Notes to us for your appointment" name="notes"></textarea>
             </div>
             <div class="form-group">
-            <button type="submit" class="btn btn-primary first-btn">Submit Now</button>
+            <button type="submit" class="btn btn-primary first-btn">Book Now</button>
           </div>
           </form>
         </div>
