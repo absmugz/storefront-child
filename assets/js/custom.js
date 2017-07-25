@@ -259,7 +259,39 @@ $('html, body').stop().animate({
                     }
                 }
         }
-    });
+    }).on('success.form.fv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            var $form = $(e.target),
+                fv    = $form.data('formValidation');
+
+            // Use Ajax to submit form data
+           $.ajax({
+                url: $form.attr('action'),
+                type: 'POST',
+                data: $form.serialize(),
+                success: function(result) {
+                  
+                  console.log( $form.serialize() );
+                  
+                  $('#contactForm').data('formValidation').resetForm();
+                  
+                    // ... Process the result ...
+                    // Success message
+                    $('#success').html("<div class='alert alert-success'>");
+                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-success')
+                        .append("<strong>Your message has been sent. </strong>");
+                    $('#success > .alert-success')
+                        .append('</div>');
+                        
+                    
+
+                }
+            });
+        });
 
   //============================== DATE-PICKER =========================
   
@@ -281,9 +313,8 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
   
     //============================== DATE-PICKER VALIDATION =========================
   
-
-    $('#appointmentForm')
-    .find('[name="guiest_id1"]')
+  $('#appointmentForm')
+  .find('[name="guiest_id1"]')
             .selectpicker()
             .change(function(e) {
                 /* Revalidate the language when it is changed */
@@ -391,11 +422,37 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
                     }
                 }
         }
-    });
-    
-    
+    }).on('success.form.fv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
 
+            var $form = $(e.target),
+                fv    = $form.data('formValidation');
 
+            // Use Ajax to submit form data
+            $.ajax({
+                url:$('#appointmentForm').attr('action'),
+                type: 'POST',
+                data: $form.serialize(),
+                success: function(result) {
+                  
+                  $('#appointmentForm').data('formValidation').resetForm();
+                  
+                    // ... Process the result ...
+                    // Success message
+                    $('#appointmentsuccess').html("<div class='alert alert-success'>");
+                    $('#appointmentsuccess > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#appointmentsuccess > .alert-success')
+                        .append("<strong>Your message has been sent. </strong>");
+                    $('#appointmentsuccess > .alert-success')
+                        .append('</div>');
+
+                }
+            });
+        });
+
+   
 
 
   //============================== COUNT DOWN =========================

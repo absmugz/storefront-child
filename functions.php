@@ -178,7 +178,39 @@ add_action( 'init', 'remove_sf_actions' );
 	}
 	
 	
-	
+//Processing my forms
+
+add_action( 'wp_ajax_custom_action', 'custom_action' );
+add_action( 'wp_ajax_nopriv_custom_action', 'custom_action' );
+function custom_action() {
+    if ( 
+        ! isset( $_POST['name_of_nonce_field'] ) 
+        || ! wp_verify_nonce( $_POST['name_of_nonce_field'], 'custom_action_nonce') 
+    ) {
+ 
+        exit('The form is not valid');
+ 
+    }
+ 
+    // ... Processing further
+    
+    //user posted variables
+    
+   
+    
+  $name = $_POST['firstName'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+
+
+  //php mailer variables
+  $to = get_option('admin_email');
+  $subject = "Someone sent a message from ".get_bloginfo('name');
+  $headers = 'From: '. $email . "\r\n" .
+    'Reply-To: ' . $email . "\r\n";
+}
+
+
 
 
 

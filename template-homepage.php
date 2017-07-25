@@ -12,77 +12,6 @@
  * @package storefront
  */
 
- 
-  //response generation function
-
-  $response = "";
-
-  //function to generate response
-  function my_contact_form_generate_response($type, $message){
-
-    global $response;
-
-    if($type == "success") $response = "<div class='success'>{$message}</div>";
-    else $response = "<div class='error'>{$message}</div>";
-
-  }
-
-  //response messages
-  $not_human       = "Human verification incorrect.";
-  $missing_content = "Please supply all information.";
-  $email_invalid   = "Email Address Invalid.";
-  $message_unsent  = "Message was not sent. Try Again.";
-  $message_sent    = "Thanks! Your message has been sent.";
-
-  //user posted variables
-  $name = $_POST['message_name'];
-  $email = $_POST['message_email'];
-  $message = $_POST['message_text'];
-  $human = $_POST['message_human'];
-
-  //php mailer variables
-  $to = get_option('admin_email');
-  $subject = "Someone sent a message from ".get_bloginfo('name');
-  $headers = 'From: '. $email . "\r\n" .
-    'Reply-To: ' . $email . "\r\n";
-    
-// Subject of confirmation email.
-$conf_subject = 'Your recent enquiry';
-
-// Who should the confirmation email be from?
-$conf_sender = 'Allure Hair & Beauty <no-reply@allurestudio.co.za>';
-
-$msg = $name . ",\n\nThank you for your recent enquiry. A member of our 
-team will respond to your message as soon as possible.";
-
-mail( $email, $conf_subject, $msg, 'From: ' . $conf_sender );
-
-
-  if(!$human == 0){
-    if($human != 2) my_contact_form_generate_response("error", $not_human); //not human!
-    else {
-
-      //validate email
-      if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-        my_contact_form_generate_response("error", $email_invalid);
-      else //email is valid
-      {
-        //validate presence of name and message
-        if(empty($name) || empty($message)){
-          my_contact_form_generate_response("error", $missing_content);
-        }
-        else //ready to go!
-        {
-          $sent = wp_mail($to, $subject, strip_tags($message), $headers);
-          if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
-          else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
-        }
-      }
-    }
-  }
-  else if ($_POST['submitted']) my_contact_form_generate_response("error", $missing_content);
-
-
 get_header(); ?>
 
 
@@ -1084,6 +1013,13 @@ $terms = get_terms( 'service', array(
         <div class="secotionTitle">
           <h2><span>Hurry </span>Contact us</h2>
         </div>
+        
+         <div class="row">
+         <div class="col-md-12 text-center">
+          <div id="success"></div></div>
+          </div>
+                            
+                            
         <div class="row">
           <div class="col-md-8 col-sm-7 col-xs-12">
             <div class="contactTitle">
@@ -1092,6 +1028,7 @@ $terms = get_terms( 'service', array(
       <div class="contactForm">
              
                 <form action="<?php the_permalink(); ?>" id="contactForm" method="post">
+                  
               <div class="form-group">
                   <input type="text" class="form-control" placeholder="Your Name" name="firstName">
         
@@ -1106,6 +1043,10 @@ $terms = get_terms( 'service', array(
     
                   <textarea class="form-control" name="message" rows="7" placeholder="Your Message"></textarea>
                 </div>
+                
+                <input type="hidden" name="action" value="custom_action">
+                  <?php wp_nonce_field( 'custom_action_nonce', 'name_of_nonce_field' ); ?>
+                  
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary first-btn">send Message</button>
                   
@@ -1194,6 +1135,12 @@ $terms = get_terms( 'service', array(
           <h4 class="modal-title">Appointment For Hair</h4>
         </div>
         <div class="modal-body">
+          
+            <div class="row">
+         <div class="col-md-12 text-center">
+          <div id="appointmentsuccess"></div></div>
+          </div>
+                   
   <form action="<?php the_permalink(); ?>" id="appointmentForm" method="post">
             <div class="form-group categoryTitle">
               <h5>Service Date and Time</h5>
@@ -1253,8 +1200,11 @@ $terms = get_terms( 'service', array(
               <select name="stylist" id="stylist">
                 <option value=""></option>
             
-                <option value="Lillie">Lillie</option>
+
+
+                <option value="Lilly">Lilly</option>
                 <option value="Rachel">Rachel</option>
+                <option value="Ntokozo">Lindsay</option>
                 <option value="Ntokozo">Ntokozo</option>
                 <option value="Jane">Jane</option>
                  <option value="Mamu">Mamu</option>
