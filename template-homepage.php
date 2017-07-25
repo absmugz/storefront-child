@@ -1183,31 +1183,32 @@ $terms = get_terms( 'service', array(
 
 
 
-  <!-- APPOINMENT MODAL -->
+  
+   <!-- APPOINMENT MODAL -->
   <div id="appoinmentModal" class="modal fade modalCommon" role="dialog" tabindex="-1">
     <div class="modal-dialog">
       <!-- MODAL CONTENT-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Appointment For Hair Service</h4>
+          <h4 class="modal-title">Appointment For Hair</h4>
         </div>
         <div class="modal-body">
-    
-            <form action="<?php the_permalink(); ?>" id="appointmentForm" method="post">
+  <form action="<?php the_permalink(); ?>" id="appointmentForm" method="post">
             <div class="form-group categoryTitle">
               <h5>Service Date and Time</h5>
             </div>
-            <div class="dateSelect form-half form-left">
+             <div class="form-group dateSelect form-half form-left">
               
               <div class="input-group date" id="startdate"> 
     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-    <input type="text" class="form-control" value="" name="startDate">
+    <input type="text" class="form-control" value="" name="startdate">
  </div>
               
             </div>
-            <div class="timeSelect form-half form-right">
+            <div class="form-group timeSelect form-half form-right">
               <select name="guiest_id1" id="guiest_id1" class="select-drop">
+                <option value=""></option>
                 <option value="0">10.00 AM</option>
                 <option value="1">9.00 AM</option>
                 <option value="2">8.00 AM</option>

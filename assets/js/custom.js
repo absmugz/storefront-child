@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
   });
 
   //============================== SELECT BOX =========================
-$('.select-drop').selectbox();
+//$('.select-drop').selectbox();
 
   //============================== header =========================
 
@@ -275,21 +275,22 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
         })
         .on('changeDate', function(e) {
             // Revalidate the date field
-            $('#form1').formValidation('revalidateField', 'startdate');
+            $('#appointmentForm').formValidation('revalidateField', 'startdate');
         });
   
   
     //============================== DATE-PICKER VALIDATION =========================
-  $('#startdate')
-        .datepicker({
-            format: 'mm/dd/yyyy'
-        })
-        .on('changeDate', function(e) {
-            // Revalidate the date field
-            $('#appointmentForm').formValidation('revalidateField', 'startdate');
-        });
+  
 
-    $('#form1').formValidation({
+    $('#appointmentForm')
+    .find('[name="guiest_id1"]')
+            .selectpicker()
+            .change(function(e) {
+                /* Revalidate the language when it is changed */
+                $('#appointmentForm').formValidation('revalidateField', 'guiest_id1');
+            })
+            .end()
+    .formValidation({
         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
@@ -297,21 +298,66 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            startdate: {
+            firstName: {
                 validators: {
                     notEmpty: {
-                        message: 'The date is required'
-                    },
-                    date: {
-                        format: 'MM/DD/YYYY',
-                        message: 'The date is not a valid'
+                        message: 'The first name is required'
                     }
                 }
-            }
+            },
+            phoneNumber: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The phone number is required'
+                        },
+                        regexp: {
+                            message: 'The phone number can only contain the digits, spaces, -, (, ), + and .',
+                            regexp: /^[0-9\s\-()+\.]+$/
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The email address is required'
+                        },
+                        emailAddress: {
+                            message: 'The input is not a valid email address'
+                        }
+                    }
+                },
+                message: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The message is required'
+                        },
+                        stringLength: {
+                            max: 20,
+                            message: 'The message must be less than 20 characters long'
+                        }
+                    }
+                },
+            startdate: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The start date is required'
+                        },
+                        date: {
+                            format: 'MM/DD/YYYY',
+                            message: 'The start date is not valid'
+                        }
+                    }
+                },
+                guiest_id1: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select your time.'
+                        }
+                    }
+                }
         }
     });
-
-  
+    
     
 
 
