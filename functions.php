@@ -183,7 +183,7 @@ add_action( 'init', 'remove_sf_actions' );
 add_action( 'wp_ajax_custom_action', 'custom_action' );
 add_action( 'wp_ajax_nopriv_custom_action', 'custom_action' );
 
-function custom_action() {
+function custom_action_back_up() {
     // A default response holder, which will have data for sending back to our js file
     $response = array(
     	'error' => false,
@@ -207,7 +207,7 @@ $message = $_POST['message'];
 $to = 'absmugz09@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "Website Contact Form:  $name";
 $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
-$headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers = "From: noreply@allurestudio.co.za\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";   
 mail($to,$email_subject,$email_body,$headers);
 return true;  
@@ -215,7 +215,60 @@ return true;
     exit(json_encode($response));
 }
 
-add_action( 'wp_ajax_add_foobar', 'prefix_ajax_add_foobar' );
+function custom_action() {
+    // A default response holder, which will have data for sending back to our js file
+    $response = array(
+    	'error' => false,
+    );
+ 
+    // Example for creating an response with error information, to know in our js file
+    // about the error and behave accordingly, like adding error message to the form with JS
+
+ 
+    // ... Do some code here, like storing inputs to the database, but don't forget to properly sanitize input data!
+ 
+    // Don't forget to exit at the end of processing
+    
+   
+$name = $_POST['firstName'];
+$email_address = $_POST['email'];
+$phone = $_POST['phoneNumber'];
+$message = $_POST['message'];
+   
+// Create the email and send the message
+$to = array( 'info@allurestudio.co.za', $email_address );
+$subject = 'Email subject title';
+
+// This is the way to transfer the form $_POST values to the email template
+	$postdata = http_build_query( $_POST );
+	$opts = array( 'http' =>
+		array(
+			'method' => 'POST',
+			'header' => 'Content-type: application/x-www-form-urlencoded',
+			'content' => $postdata
+		)
+	);
+	$content = stream_context_create( $opts );
+	
+	// Load the email template and create the email content
+	$message = file_get_contents(get_stylesheet_directory_uri() . '/email-template/contact-form.php', false, $content );
+	
+$headers = "From: noreply@allurestudio.co.za\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers .= "Reply-To: $email_address";   
+
+foreach ( $to as $email_address ) {
+		wp_mail( $email_address, $subject, $message, $headers );
+	}
+	
+	// return the value of 1 to show it has been successful
+	// The form needs to return this value to confirm the email has been sent
+	echo '1';
+	
+  // Don't forget to stop execution afterward.
+    wp_die();
+
+    exit(json_encode($response));
+}
 
 function prefix_ajax_add_foobar() {
     // Handle request then generate response using WP_Ajax_Response
