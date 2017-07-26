@@ -180,31 +180,49 @@ add_action( 'init', 'remove_sf_actions' );
 	
 //Processing my forms
 
-// Function for handling the contact form
-function yourwebsite_contactform_init() {
+add_action( 'wp_ajax_custom_action', 'custom_action' );
+add_action( 'wp_ajax_nopriv_custom_action', 'custom_action' );
+
+function custom_action() {
+    // A default response holder, which will have data for sending back to our js file
+    $response = array(
+    	'error' => false,
+    );
  
-	// This calls the javascript we just created for the form validation
-	wp_localize_script( 'custom', 'wp_ajax', array(
-		'url' => admin_url( 'admin-ajax.php' ),
-		'nonce' => wp_create_nonce( "ajax_nonce" ) // this is a unique token to prevent form hijacking
-	) );
+    // Example for creating an response with error information, to know in our js file
+    // about the error and behave accordingly, like adding error message to the form with JS
+
  
-	// Enable any admin to run ajax_login() in AJAX and POST the form
-	add_action( 'wp_ajax_yourwebsite_contactform', 'yourwebsite_contactform_process' );
-	
-	// Enable any user with no privileges to run ajax_login() in AJAX and POST the form
-	add_action( 'wp_ajax_nopriv_yourwebsite_contactform', 'yourwebsite_contactform_process' );
+    // ... Do some code here, like storing inputs to the database, but don't forget to properly sanitize input data!
+ 
+    // Don't forget to exit at the end of processing
+    
+   
+$name = $_POST['firstName'];
+$email_address = $_POST['email'];
+$phone = $_POST['phoneNumber'];
+$message = $_POST['message'];
+   
+// Create the email and send the message
+$to = 'absmugz09@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+$email_subject = "Website Contact Form:  $name";
+$email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
+$headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers .= "Reply-To: $email_address";   
+mail($to,$email_subject,$email_body,$headers);
+return true;  
+
+    exit(json_encode($response));
 }
- 
-// Initiate the ajax enquiry form and add the validation javascript file
-add_action( 'init', 'yourwebsite_contactform_init' );
-add_action( 'wp_enqueue_scripts', 'yourwebsite_contactform_init' );
- 
-// Function to send the email using the email template
-function yourwebsite_contactform_process() {
-	$to = array('info@allurestudio.co.za');
+
+add_action( 'wp_ajax_add_foobar', 'prefix_ajax_add_foobar' );
+
+function prefix_ajax_add_foobar() {
+    // Handle request then generate response using WP_Ajax_Response
+
+//$to = array('info@allurestudio.co.za');
 	// If you want to send to several emails just add to the array like below
-	// $to = array( 'your@emailaccount.com', 'another@emailaccount.com' );
+	$to = array( 'info@allurestudio.co.za', 'absmugz09@gmail.com' );
 	$subject = 'Email subject title';
 	
 	// This is the way to transfer the form $_POST values to the email template
@@ -222,6 +240,8 @@ function yourwebsite_contactform_process() {
 	$message = file_get_contents(get_stylesheet_directory_uri() . '/email-template/contact-form.php', false, $content );
 	
 	
+	
+	
 	// Set the email header which contains the forms fullname and the email address
 	$headers = 'From: ' . trim( $_POST[ 'firstName' ] ) . ' <' . trim( $_POST[ 'email' ] ) . '>' . "\r\n";
 	
@@ -234,14 +254,12 @@ function yourwebsite_contactform_process() {
 	// return the value of 1 to show it has been successful
 	// The form needs to return this value to confirm the email has been sent
 	echo '1';
-	die();
+	
+    // Don't forget to stop execution afterward.
+    wp_die();
 }
- 
-// Set the default email type as html instead of text only
-function yourwebsite_contactform_set_content_type(){
-    return "text/html";
-}
-add_filter( 'wp_mail_content_type','yourwebsite_contactform_set_content_type' );
+
+
 
 
 

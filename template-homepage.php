@@ -1027,7 +1027,8 @@ $terms = get_terms( 'service', array(
             </div>
       <div class="contactForm">
              
-                <form action="#" id="contactForm" method="post">
+                
+                  <form id="contactForm" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>">
                   
               <div class="form-group">
                   <input type="text" class="form-control" placeholder="Your Name" name="firstName">
@@ -1045,7 +1046,7 @@ $terms = get_terms( 'service', array(
                 </div>
                 
                 <!-- Hidden value added for WordPress ajax security and to validate function name -->
-				        <input type="hidden" name="action" value="yourwebsite_contactform"/>
+				        <input type="hidden" name="action" value="custom_action">
                   
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary first-btn">send Message</button>
