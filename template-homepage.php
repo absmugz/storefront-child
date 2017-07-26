@@ -1044,8 +1044,8 @@ $terms = get_terms( 'service', array(
                   <textarea class="form-control" name="message" rows="7" placeholder="Your Message"></textarea>
                 </div>
                 
-                <input type="hidden" name="action" value="custom_action">
-                  <?php wp_nonce_field( 'custom_action_nonce', 'name_of_nonce_field' ); ?>
+                <!-- Hidden value added for WordPress ajax security and to validate function name -->
+				        <input type="hidden" name="action" value="yourwebsite_contactform"/>
                   
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary first-btn">send Message</button>

@@ -180,35 +180,68 @@ add_action( 'init', 'remove_sf_actions' );
 	
 //Processing my forms
 
-add_action( 'wp_ajax_custom_action', 'custom_action' );
-add_action( 'wp_ajax_nopriv_custom_action', 'custom_action' );
-function custom_action() {
-    if ( 
-        ! isset( $_POST['name_of_nonce_field'] ) 
-        || ! wp_verify_nonce( $_POST['name_of_nonce_field'], 'custom_action_nonce') 
-    ) {
+// Function for handling the contact form
+function yourwebsite_contactform_init() {
  
-        exit('The form is not valid');
+	// This calls the javascript we just created for the form validation
+	wp_localize_script( 'custom', 'wp_ajax', array(
+		'url' => admin_url( 'admin-ajax.php' ),
+		'nonce' => wp_create_nonce( "ajax_nonce" ) // this is a unique token to prevent form hijacking
+	) );
  
-    }
- 
-    // ... Processing further
-    
-    //user posted variables
-    
-   
-    
-  $name = $_POST['firstName'];
-  $email = $_POST['email'];
-  $message = $_POST['message'];
-
-
-  //php mailer variables
-  $to = get_option('admin_email');
-  $subject = "Someone sent a message from ".get_bloginfo('name');
-  $headers = 'From: '. $email . "\r\n" .
-    'Reply-To: ' . $email . "\r\n";
+	// Enable any admin to run ajax_login() in AJAX and POST the form
+	add_action( 'wp_ajax_yourwebsite_contactform', 'yourwebsite_contactform_process' );
+	
+	// Enable any user with no privileges to run ajax_login() in AJAX and POST the form
+	add_action( 'wp_ajax_nopriv_yourwebsite_contactform', 'yourwebsite_contactform_process' );
 }
+ 
+// Initiate the ajax enquiry form and add the validation javascript file
+add_action( 'init', 'yourwebsite_contactform_init' );
+add_action( 'wp_enqueue_scripts', 'yourwebsite_contactform_init' );
+ 
+// Function to send the email using the email template
+function yourwebsite_contactform_process() {
+	$to = array('info@allurestudio.co.za');
+	// If you want to send to several emails just add to the array like below
+	// $to = array( 'your@emailaccount.com', 'another@emailaccount.com' );
+	$subject = 'Email subject title';
+	
+	// This is the way to transfer the form $_POST values to the email template
+	$postdata = http_build_query( $_POST );
+	$opts = array( 'http' =>
+		array(
+			'method' => 'POST',
+			'header' => 'Content-type: application/x-www-form-urlencoded',
+			'content' => $postdata
+		)
+	);
+	$content = stream_context_create( $opts );
+	
+	// Load the email template and create the email content
+	$message = file_get_contents(get_stylesheet_directory_uri() . '/email-template/contact-form.php', false, $content );
+	
+	
+	// Set the email header which contains the forms fullname and the email address
+	$headers = 'From: ' . trim( $_POST[ 'firstName' ] ) . ' <' . trim( $_POST[ 'email' ] ) . '>' . "\r\n";
+	
+	// Now loop through the $to email accounts
+	// If you don't do this it will send the email as a group send (i.e. each email account will see all the other email accounts)
+	foreach ( $to as $email_address ) {
+		wp_mail( $email_address, $subject, $message, $headers );
+	}
+	
+	// return the value of 1 to show it has been successful
+	// The form needs to return this value to confirm the email has been sent
+	echo '1';
+	die();
+}
+ 
+// Set the default email type as html instead of text only
+function yourwebsite_contactform_set_content_type(){
+    return "text/html";
+}
+add_filter( 'wp_mail_content_type','yourwebsite_contactform_set_content_type' );
 
 
 
