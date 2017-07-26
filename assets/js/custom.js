@@ -268,7 +268,8 @@ $('html, body').stop().animate({
 
             // Use Ajax to submit form data
            $.ajax({
-                url: $form.attr('action'),
+                //url: $form.attr('action'),
+                url: wp_ajax.url,
                 type: 'POST',
                 data: $form.serialize(),
                 success: function(result) {

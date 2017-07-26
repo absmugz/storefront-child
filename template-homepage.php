@@ -1027,7 +1027,7 @@ $terms = get_terms( 'service', array(
             </div>
       <div class="contactForm">
              
-                <form action="<?php the_permalink(); ?>" id="contactForm" method="post">
+                <form action="#" id="contactForm" method="post">
                   
               <div class="form-group">
                   <input type="text" class="form-control" placeholder="Your Name" name="firstName">
