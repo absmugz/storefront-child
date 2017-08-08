@@ -22,9 +22,9 @@
           <div class="row">
             <div class="col-sm-3 col-xs-12">
               <div class="footerText">
-                <a href="index.html" class="footerLogo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-footer.png" alt="Footer Logo"></a>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia.Lorem ipsum dolor sit amet.</p>
-                <p>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="index.html" class="footerLogo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/logo-footer.png" alt="Footer Logo"></a>
+                <!--<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia.Lorem ipsum dolor sit amet.</p>
+                <p>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
               </div>
             </div>
             <div class="col-sm-3 col-xs-12 paddingLeft">
@@ -33,19 +33,20 @@
               </div>
               <div class="useLink">
                 <ul class="list-unstyled">
-                  <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Web Design</a></li>
-                  <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About Anzel Beauty Spa</a></li>
-                  <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Mobile</a></li>
-                  <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Why Anzel Beauty Spa</a></li>
-                  <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Social Media</a></li>
+                  <li><a href="https://www.mizani.com/"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Mizani</a></li>
+                  <li><a href="https://www.darkandlovely.com.gh/dark-and-lovely"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Dark and Lovely</a></li>
+                  <li><a href="http://www.tresemme.co.za/"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Tresemme</a></li>
+                  <li><a href="https://www.headandshoulders.co.za/en-za"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Head & Shoulders</a></li>
+                  <li><a href="http://marico.com/south-africa/brands/just-for-kids"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Just for kids</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-3 col-xs-12">
-              <div class="footerInfoTitle">
+              <!--<div class="footerInfoTitle">
                 <h4>Gallery</h4>
-              </div>
-              <div class="footerGallery row">
+              </div>-->
+              
+              <!--<div class="footerGallery row">
                 <div class="col-xs-4">
                   <a href="gallery-v2.html" style="background-image: url(http://placehold.it/75x75);"></a>
                 </div>
@@ -64,7 +65,8 @@
                 <div class="col-xs-4">
                   <a href="gallery-v2.html" style="background-image: url(http://placehold.it/75x75);"></a>
                 </div>
-              </div>
+              </div>-->
+              
             </div>
             <div class="col-sm-3 col-xs-12">
               <div class="footerInfoTitle">
@@ -88,11 +90,14 @@
           <div class="row">
             <div class="col-sm-5 col-sm-push-7 col-xs-12">
               <ul class="list-inline socialLink">
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                <!-- <li><a href="https://twitter.com/allureclaremont"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>-->
+                <li><a href="https://twitter.com/allureclaremont"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.facebook.com/Allure-Hair-Beauty-680521828794184/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+               <li><a href="https://www.instagram.com/allureclaremont/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                 <!--<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>-->
+                
               </ul>
             </div>
             <div class="col-sm-7 col-sm-pull-5 col-xs-12">

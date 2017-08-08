@@ -15,7 +15,6 @@
 get_header(); ?>
 
 
-
 <!-- MAIN SLIDER -->
     <section class="main-slider" data-loop="true" data-autoplay="true" data-interval="7000">
       <div class="inner">
@@ -192,8 +191,7 @@ $terms = get_terms( 'service', array(
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">
                          
                           <h3>Weaves & Wigs</h3>
-                            <h4>Prices from R250.00</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+      
                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
@@ -250,8 +248,7 @@ $terms = get_terms( 'service', array(
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-singles.jpg" alt="Singles" class="img-responsive">
                           
                           <h3>Singles</h3>
-                          <h4>Prices from R250.00</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                    
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
@@ -305,8 +302,7 @@ $terms = get_terms( 'service', array(
                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-hair.jpg" alt="Hair, Haircuts & Other" class="img-responsive">
                           
                           <h3>Hair, Haircuts & Other</h3>
-                          <h4>Prices from R25.00</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                        
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
@@ -361,8 +357,7 @@ $terms = get_terms( 'service', array(
                         <div class="varietyContent">
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-dreadlocks.jpg" alt="Dreadlocks or Faux Locs or Marley Hair" class="img-responsive">
                           <h3>Dreadlocks / Faux Locs / marley</h3>
-                          <h4>Prices from R25.00</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                          
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
@@ -415,8 +410,7 @@ $terms = get_terms( 'service', array(
                         <div class="varietyContent">
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-cornrows.jpg" alt="Cornrows" class="img-responsive">
                           <h3>Cornrows</h3>
-                          <h4>Prices from R25.00</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                       
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
@@ -472,8 +466,7 @@ $terms = get_terms( 'service', array(
                         <div class="varietyContent">
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-nails.jpg" alt="Nails" class="img-responsive">
                           <h3>Nails</h3>
-                          <h4>Prices from R25.00</h4>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                       
                           <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
                         </div>
                       </div>
@@ -543,7 +536,7 @@ $terms = get_terms( 'service', array(
 
     
 
-<!-- REVIEW SECTION -->
+<!-- REVIEW SECTION 
     <section class="clearfix reviewSection patternbg">
       <div class="container">
         <div class="secotionTitle">
@@ -583,7 +576,7 @@ $terms = get_terms( 'service', array(
         </div>
       </div>
     </section>
-
+-->
 
 <!-- HOME GALLERY SECTION -->
     <section class="clearfix homeGalleryTitle" id="gallery">
@@ -771,238 +764,7 @@ $terms = get_terms( 'service', array(
     </section>-->
 
 <!-- EXPERT SECTION -->
-    <section class="clearfix expertSection">
-      <div class="container">
-        <div class="secotionTitle">
-          <h2><span>Meet </span>our experts</h2>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div id="thubmnailTeamSlider" class="carousel slide thumbnailCarousel">
 
-              <ol class="carousel-indicators">
-                <li data-target="#thubmnailTeamSlider" data-slide-to="0" class="active"></li>
-                <li data-target="#thubmnailTeamSlider" data-slide-to="1"></li>
-                <li data-target="#thubmnailTeamSlider" data-slide-to="2"></li>
-                <li data-target="#thubmnailTeamSlider" data-slide-to="3"></li>
-                <li data-target="#thubmnailTeamSlider" data-slide-to="4"></li>
-                <li data-target="#thubmnailTeamSlider" data-slide-to="5"></li>
-                <li data-target="#thubmnailTeamSlider" data-slide-to="6"></li>
-                <li data-target="#thubmnailTeamSlider" data-slide-to="7"></li>
-              </ol>
-
-              <!-- Carousel items -->
-              <div class="carousel-inner">
-
-                <div class="item active">
-                  <div class="item-inner">
-                    <div class="expertBox">
-                      <div class="expertImage">
-                        <img src="http://placehold.it/270x270" alt="Image expert">
-                        <div class="expertMask">
-                          <div class="socialArea">
-                            <ul class="list-inline">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="expertCaption ">
-                        <h2>Linda Smith</h2>
-                        <p>Founder, Angel Beauty Spa</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="expertBox">
-                      <div class="expertImage">
-                        <img src="http://placehold.it/270x270" alt="Image expert">
-                        <div class="expertMask">
-                          <div class="socialArea">
-                            <ul class="list-inline">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="expertCaption ">
-                        <h2>Linda Smith</h2>
-                        <p>Founder, Angel Beauty Spa</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="expertBox">
-                      <div class="expertImage">
-                        <img src="http://placehold.it/270x270" alt="Image expert">
-                        <div class="expertMask">
-                          <div class="socialArea">
-                            <ul class="list-inline">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="expertCaption ">
-                        <h2>Linda Smith</h2>
-                        <p>Founder, Angel Beauty Spa</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="expertBox">
-                      <div class="expertImage">
-                        <img src="http://placehold.it/270x270" alt="Image expert">
-                        <div class="expertMask">
-                          <div class="socialArea">
-                            <ul class="list-inline">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="expertCaption ">
-                        <h2>Linda Smith</h2>
-                        <p>Founder, Angel Beauty Spa</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="expertBox">
-                      <div class="expertImage">
-                        <img src="http://placehold.it/270x270" alt="Image expert">
-                        <div class="expertMask">
-                          <div class="socialArea">
-                            <ul class="list-inline">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="expertCaption ">
-                        <h2>Linda Smith</h2>
-                        <p>Founder, Angel Beauty Spa</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="expertBox">
-                      <div class="expertImage">
-                        <img src="http://placehold.it/270x270" alt="Image expert">
-                        <div class="expertMask">
-                          <div class="socialArea">
-                            <ul class="list-inline">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="expertCaption ">
-                        <h2>Linda Smith</h2>
-                        <p>Founder, Angel Beauty Spa</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="expertBox">
-                      <div class="expertImage">
-                        <img src="http://placehold.it/270x270" alt="Image expert">
-                        <div class="expertMask">
-                          <div class="socialArea">
-                            <ul class="list-inline">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="expertCaption ">
-                        <h2>Linda Smith</h2>
-                        <p>Founder, Angel Beauty Spa</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="expertBox">
-                      <div class="expertImage">
-                        <img src="http://placehold.it/270x270" alt="Image expert">
-                        <div class="expertMask">
-                          <div class="socialArea">
-                            <ul class="list-inline">
-                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="expertCaption ">
-                        <h2>Linda Smith</h2>
-                        <p>Founder, Angel Beauty Spa</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <a class="left carousel-control" href="#thubmnailTeamSlider" data-slide="prev">‹</a>
-              <a class="right carousel-control" href="#thubmnailTeamSlider" data-slide="next">›</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 <!-- PRICING SECTION -->
     
@@ -1079,42 +841,44 @@ $terms = get_terms( 'service', array(
             <div class="owl-carousel partnersLogoSlider">
               <div class="slide">
                 <div class="partnersLogo clearfix">
-                  <img src="http://placehold.it/175x100" alt="Image Partner">
+                  
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/ladine-logo.png" alt="Ladine">
                 </div>
               </div>
               <div class="slide">
                 <div class="partnersLogo clearfix">
-                  <img src="http://placehold.it/175x100" alt="Image Partner">
+                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/mizani-logo.png" alt="Mizani - True Textures">
                 </div>
               </div>
               <div class="slide">
                 <div class="partnersLogo clearfix">
-                  <img src="http://placehold.it/175x100" alt="Image Partner">
+                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/dark-and-lovely-logo.png" alt="Dark and Lovely">  
                 </div>
               </div>
               <div class="slide">
                 <div class="partnersLogo clearfix">
-                  <img src="http://placehold.it/175x100" alt="Image Partner">
+                 
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/tresemme-logo.png" alt="Tresemme">  
                 </div>
               </div>
               <div class="slide">
                 <div class="partnersLogo clearfix">
-                  <img src="http://placehold.it/175x100" alt="Image Partner">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/cantu-logo.png" alt="Cantu">  
                 </div>
               </div>
               <div class="slide">
                 <div class="partnersLogo clearfix">
-                  <img src="http://placehold.it/175x100" alt="Image Partner">
+                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/head-and-shoulders-logo.png" alt="head and shoulders">  
                 </div>
               </div>
               <div class="slide">
                 <div class="partnersLogo clearfix">
-                  <img src="http://placehold.it/175x100" alt="Image Partner">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/maroza-logo.png" alt="Maroza"> 
                 </div>
               </div>
               <div class="slide">
                 <div class="partnersLogo clearfix">
-                  <img src="http://placehold.it/175x100" alt="Image Partner">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/caivil-for-kids-logo.png" alt="Caivil for kids"> 
                 </div>
               </div>
             </div>
