@@ -184,7 +184,13 @@ $terms = get_terms( 'service', array(
                         	
                             <!-- The very first "if" tested to see if there were any Posts to -->
                             <!-- display.  This "else" part tells what do if there weren't any. -->
-                            <p><?php _e( 'Coming soon.' ); ?></p>
+                           
+                           
+                            <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	
+                      		<li><a href="#" data-toggle="tab">Coming soon.</span></a></li>
+                      	
+                      	</ul>
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -247,7 +253,11 @@ $terms = get_terms( 'service', array(
                         	
                             <!-- The very first "if" tested to see if there were any Posts to -->
                             <!-- display.  This "else" part tells what do if there weren't any. -->
-                            <p><?php _e( 'Coming soon.' ); ?></p>
+                             <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	
+                      		<li><a href="#" data-toggle="tab">Coming soon.</span></a></li>
+                      	
+                      	</ul>
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -307,7 +317,11 @@ $terms = get_terms( 'service', array(
                         	
                             <!-- The very first "if" tested to see if there were any Posts to -->
                             <!-- display.  This "else" part tells what do if there weren't any. -->
-                            <p><?php _e( 'Coming soon.' ); ?></p>
+                             <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	
+                      		<li><a href="#" data-toggle="tab">Coming soon.</span></a></li>
+                      	
+                      	</ul>
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -367,7 +381,11 @@ $terms = get_terms( 'service', array(
                         	
                             <!-- The very first "if" tested to see if there were any Posts to -->
                             <!-- display.  This "else" part tells what do if there weren't any. -->
-                            <p><?php _e( 'Coming soon.' ); ?></p>
+                            <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	
+                      		<li><a href="#" data-toggle="tab">Coming soon.</span></a></li>
+                      	
+                      	</ul>
                         
                       <?php endif; ?>
                       
@@ -428,7 +446,11 @@ $terms = get_terms( 'service', array(
                         	
                             <!-- The very first "if" tested to see if there were any Posts to -->
                             <!-- display.  This "else" part tells what do if there weren't any. -->
-                            <p><?php _e( 'Coming soon.' ); ?></p>
+                            <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	
+                      		<li><a href="#" data-toggle="tab">Coming soon.</span></a></li>
+                      	
+                      	</ul>
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -489,7 +511,11 @@ $terms = get_terms( 'service', array(
                         	
                             <!-- The very first "if" tested to see if there were any Posts to -->
                             <!-- display.  This "else" part tells what do if there weren't any. -->
-                            <p><?php _e( 'Coming soon.' ); ?></p>
+                            <ul class="nav nav-tabs col-sm-4 col-xs-12">
+                      	
+                      		<li><a href="#" data-toggle="tab">Coming soon.</span></a></li>
+                      	
+                      	</ul>
 
                       <?php endif; ?>
                       
