@@ -179,6 +179,12 @@ $terms = get_terms( 'service', array(
                       		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
                       	<?php endwhile; ?>
                       	</ul>
+                        <?php else: ?>
+                        
+                        	
+                            <!-- The very first "if" tested to see if there were any Posts to -->
+                            <!-- display.  This "else" part tells what do if there weren't any. -->
+                            <p><?php _e( 'Coming soon.' ); ?></p>
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -236,6 +242,12 @@ $terms = get_terms( 'service', array(
                       		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
                       	<?php endwhile; ?>
                       	</ul>
+                        <?php else: ?>
+                        
+                        	
+                            <!-- The very first "if" tested to see if there were any Posts to -->
+                            <!-- display.  This "else" part tells what do if there weren't any. -->
+                            <p><?php _e( 'Coming soon.' ); ?></p>
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -290,6 +302,12 @@ $terms = get_terms( 'service', array(
                       		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
                       	<?php endwhile; ?>
                       	</ul>
+                        <?php else: ?>
+                        
+                        	
+                            <!-- The very first "if" tested to see if there were any Posts to -->
+                            <!-- display.  This "else" part tells what do if there weren't any. -->
+                            <p><?php _e( 'Coming soon.' ); ?></p>
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -326,7 +344,7 @@ $terms = get_terms( 'service', array(
                           'tax_query' => array(
                               array(
                                   'taxonomy' => 'service',   // taxonomy name
-                                  'field' => 'dreadlocks-faux-locs-marley',           // term_id, slug or name
+                                  'field' => 'dreadlocks',           // term_id, slug or name
                                   'terms' => 37,                  // term id, term slug or term name
                             
                               )
@@ -344,6 +362,13 @@ $terms = get_terms( 'service', array(
                       		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
                       	<?php endwhile; ?>
                       	</ul>
+                        <?php else: ?>
+                        
+                        	
+                            <!-- The very first "if" tested to see if there were any Posts to -->
+                            <!-- display.  This "else" part tells what do if there weren't any. -->
+                            <p><?php _e( 'Coming soon.' ); ?></p>
+                        
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -398,6 +423,12 @@ $terms = get_terms( 'service', array(
                       		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
                       	<?php endwhile; ?>
                       	</ul>
+                        <?php else: ?>
+                        
+                        	
+                            <!-- The very first "if" tested to see if there were any Posts to -->
+                            <!-- display.  This "else" part tells what do if there weren't any. -->
+                            <p><?php _e( 'Coming soon.' ); ?></p>
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
@@ -453,6 +484,13 @@ $terms = get_terms( 'service', array(
                       		<li><a href="#" data-toggle="tab"><?php the_title(); ?> <span>R<?php the_field('price'); ?></span></a></li>
                       	<?php endwhile; ?>
                       	</ul>
+                        <?php else: ?>
+                        
+                        	
+                            <!-- The very first "if" tested to see if there were any Posts to -->
+                            <!-- display.  This "else" part tells what do if there weren't any. -->
+                            <p><?php _e( 'Coming soon.' ); ?></p>
+
                       <?php endif; ?>
                       
                       <?php wp_reset_query();	 
