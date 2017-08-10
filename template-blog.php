@@ -47,7 +47,12 @@ $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) : ?>
     <?php  while ( $the_query->have_posts() ) :  $the_query->the_post(); ?>
       <div class="blogPost">
-	   <img src="http://placehold.it/770x400" alt="Image Blog" class="img-responsive">
+        
+        
+           <?php the_post_thumbnail(); ?>
+        
+	   <!-- <img src="http://placehold.it/770x400" alt="Image Blog" class="img-responsive">-->
+
 	     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></h2>
 	
 	  <p><?php the_excerpt(); ?></p>
