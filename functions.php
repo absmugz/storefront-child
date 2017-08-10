@@ -145,19 +145,19 @@ add_action( 'init', 'remove_sf_actions' );
               </li>
               <li>
                 
-                <a href="#about" class="scrolling">About us</a>
+                <a href="<?php bloginfo('url');?>/#about" class="scrolling">About us</a>
               </li>
-              <li>
+              <!--<li>
                 <a href="#services" class="scrolling">Services</a>
-              </li>
+              </li>-->
               <li>
-                <a href="#pricelist" class="scrolling">Pricelist</a>
+                <a href="<?php bloginfo('url');?>/#pricelist" class="scrolling">Pricelist</a>
               </li>
-              <li>
+              <!--<li>
                 <a href="#team" class="scrolling">Team</a>
-              </li>
+              </li>-->
                <li>
-                <a href="#gallery" class="scrolling">Gallery</a>
+                <a href="<?php bloginfo('url');?>/#gallery" class="scrolling">Gallery</a>
               </li>
               <li>
                 <a href="<?php bloginfo('url');?>/blog/">Blog</a>
