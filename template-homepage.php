@@ -345,7 +345,7 @@ $terms = get_terms( 'service', array(
                 </div>
 <!-- hair -->
 <!-- dreadlocks-faux-locs-marley -->
-                <div class="tab-pane" id="dreadlocks-faux-locs-marley">
+                <div class="tab-pane" id="dreadlocks">
                   <div class="tabbable tabs-left row">
                     
                     <?php 
