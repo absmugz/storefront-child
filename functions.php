@@ -121,7 +121,7 @@ add_action( 'init', 'remove_sf_actions' );
 
 	function storefront_primary_navigation() {
 		?>
-		<nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+		<nav id="menuBar" class="navbar navbar-default lightHeader navbar-fixed-top" role="navigation">
         <div class="container">
 
           <!-- Brand and toggle get grouped for better mobile display -->

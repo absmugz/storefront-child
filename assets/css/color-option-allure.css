@@ -192,4 +192,16 @@ a,
   padding: 0 !important;
 }
 
+/*Sticky Nav fix */
+
+.top-info-bar {
+position: fixed !important; 
+}
+.navbar {
+top: 45px;
+position: fixed !important;
+}
+
+/*Sticky Nav fix */
+
 /*# sourceMappingURL=maps/color-option3.css.map */

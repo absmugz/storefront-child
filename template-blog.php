@@ -148,10 +148,12 @@ if ( $the_query->have_posts() ) : ?>
 
           <div class="col-sm-4 col-xs-12">
             <div class="blogSidebar">
-              <div class="input-group">
+              
+              <!--<div class="input-group">
                 <input type="text" class="form-control" placeholder="Search..." aria-describedby="basic-addon2">
                 <a href="#" class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></a>
-              </div>
+              </div>-->
+              
               <div class="panel panel-default">
                 <div class="panel-heading">Categories</div>
                 <div class="panel-body">
