@@ -29,15 +29,28 @@ get_header(); ?>
 
             <div class="blogPost singlePost">
               <img src="http://placehold.it/770x400" alt="Image Blog" class="img-responsive">
-              <?php the_title( '<h2>', '</h2>' ); ?>
+              
+              <?php
+if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+the_post_thumbnail( 'full' );
+}
+?>
               
               
-               <?php the_excerpt( '<p>', '</p>' ); ?>
+          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    <?php the_excerpt() ?>
+<?php endwhile; else: ?>
+    <p>Nothing to see here.</p>
+<?php endif; ?>
              
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto. </p>
-              <p><img src="http://placehold.it/400x300" alt="Image Blog">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, </p>
-              <p>ExceCupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto. </p>
+      
+             
+                <p><img src="<?php the_field('image_one'); ?>" alt="" /><?php the_field('text_for_image_one'); ?></p>
+              <p><img src="<?php the_field('image_two'); ?>" alt="" /><?php the_field('image_two_text'); ?></p>
+              <p><img src="<?php the_field('image_three'); ?>" alt="" /><?php the_field('image_three_text'); ?></p>
               
+              <p>suck my balls</p>
             </div>
 
             

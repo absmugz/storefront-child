@@ -17,7 +17,14 @@ get_header(); ?>
 
 
 <!-- PAGE TITLE SECTION -->
-    <section class="clearfix pageTitleArea" style="background-image: url(http://placehold.it/1920x250);">
+<?php
+
+?>
+
+ <section style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hairducation.jpg);" class="clearfix pageTitleArea">
+
+   
+       
         <div class="container">
 	        <div class="pageTitle">
 	            <h1>blog page</h1>
