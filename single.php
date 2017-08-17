@@ -12,7 +12,7 @@ get_header(); ?>
 
 
 <!-- PAGE TITLE SECTION -->
-    <section class="clearfix pageTitleArea" style="background-image: url(http://placehold.it/1920x250);">
+    <section class="clearfix pageTitleArea" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hairducation.jpg);">
         <div class="container">
 	        <div class="pageTitle">
 	            <h1>Single Post</h1>
@@ -28,29 +28,46 @@ get_header(); ?>
           <div class="col-sm-8 col-xs-12">
 
             <div class="blogPost singlePost">
-              <img src="http://placehold.it/770x400" alt="Image Blog" class="img-responsive">
+             <!-- <img src="http://placehold.it/770x400" alt="Image Blog" class="img-responsive">-->
               
               <?php
 if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-the_post_thumbnail( 'full' );
+//the_post_thumbnail( 'full' );
+
+the_post_thumbnail('full', array(
+'class' => 'img-responsive'
+
+));
 }
 ?>
               
               
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-    <?php the_excerpt() ?>
-<?php endwhile; else: ?>
-    <p>Nothing to see here.</p>
+    
+    <?php the_content() ?>
+<?php endwhile;?>
+   
 <?php endif; ?>
              
-      
+
+<div class="row">
+  <div class="col-md-8"><?php the_field('text_for_image_one'); ?></div>
+  <div class="col-md-4"><img src="<?php the_field('image_one'); ?>" alt="" /></div>
+</div>
+ <hr>
+ 
+ <div class="row">
+  <div class="col-md-8"><?php the_field('image_two_text'); ?></div>
+  <div class="col-md-4"><img src="<?php the_field('image_two'); ?>" alt="" /></div>
+</div>
+ <hr>
+ 
+  <div class="row">
+  <div class="col-md-8"><?php the_field('image_three_text'); ?></div>
+  <div class="col-md-4"><img src="<?php the_field('image_three'); ?>" alt="" /></div>
+</div>
+
              
-                <p><img src="<?php the_field('image_one'); ?>" alt="" /><?php the_field('text_for_image_one'); ?></p>
-              <p><img src="<?php the_field('image_two'); ?>" alt="" /><?php the_field('image_two_text'); ?></p>
-              <p><img src="<?php the_field('image_three'); ?>" alt="" /><?php the_field('image_three_text'); ?></p>
-              
-              <p>suck my balls</p>
             </div>
 
             
