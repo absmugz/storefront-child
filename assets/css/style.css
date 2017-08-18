@@ -2033,10 +2033,10 @@ textarea.form-control {
   float: none; }
   @media (min-width: 320px) {
     .aboutSection {
-      padding: 0 15px; } }
+      padding: 125px 15px; } }
   @media (min-width: 768px) {
     .aboutSection {
-      padding: 0 0 50px 0; } }
+      padding: 125px 0 50px 0; } }
 
 .aboutInner {
   position: relative; }
@@ -2149,7 +2149,7 @@ textarea.form-control {
 
 /*================= 5.2 VARIETY SECTION ==================*/
 .varietySection {
-  padding: 0 0 100px 0;
+  padding: 125px 0 100px 0;
   background-color: #ffffff;
   width: 100%;
   float: none; }
@@ -2855,6 +2855,13 @@ textarea.form-control {
 .homeGalleryTitle {
   width: 100%;
   float: none; }
+  
+    @media (min-width: 320px) {
+    .homeGalleryTitle {
+      padding: 125px 15px; } }
+  @media (min-width: 768px) {
+    .homeGalleryTitle {
+      padding: 125px 0 50px 0; } }
 
 .homeGallery {
   padding: 0; }

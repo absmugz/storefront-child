@@ -45,9 +45,7 @@ the_post_thumbnail('full', array(
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
     <?php the_content() ?>
-<?php endwhile;?>
-   
-<?php endif; ?>
+
              
 
 <div class="row">
@@ -67,6 +65,9 @@ the_post_thumbnail('full', array(
   <div class="col-md-4"><img src="<?php the_field('image_three'); ?>" alt="" /></div>
 </div>
 
+<?php endwhile;?>
+   
+<?php endif; ?>
              
             </div>
 
