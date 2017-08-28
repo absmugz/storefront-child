@@ -16,30 +16,29 @@ get_header(); ?>
 
 
 <!-- MAIN SLIDER -->
-
-
     <section class="main-slider" data-loop="true" data-autoplay="true" data-interval="7000">
       <div class="inner">
 
         <!-- Slide One -->
-        <div class="slide slideResize slide1" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-1.jpg);">
-          
+       <div class="slide slideResize slide3" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-1.jpg);">
           <div class="container">
-            <div class="slide-inner1 common-inner">
-              <span class="h1 from-bottom">luxury spa resort</span><br>
-              <span class="h4 from-bottom">The real place of Mindfullness & Healthy body</span><br>
-              <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
+            <div class="common-inner slide-inner3">
+            
+              <span class="h1 from-bottom">Perfect hair</span><br>
+              <span class="h4 from-bottom">Life isn't perfect, but your hair can be</span><br>
+              <a href="#pricelist" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
             </div>
           </div>
         </div>
 
         <!-- Slide Two -->
-        <div class="slide slideResize slide2" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-2.jpg);">
+          <div class="slide slideResize slide3" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-2.jpg);">
           <div class="container">
-            <div class="slide-inner2 common-inner">
-              <span class="h1 from-bottom">luxury spa resort</span><br>
-              <span class="h4 from-bottom">The real place of Mindfullness & Healthy body</span><br>
-              <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
+            <div class="common-inner slide-inner3">
+          
+              <span class="h1 from-bottom">Hair-Vestment</span><br>
+              <span class="h4 from-bottom">Invest in your hair, you wear it everyday</span><br>
+              <a href="#appoinmentModal" class="btn btn-primary first-btn waves-effect waves-light scale-up">Book Now</a>
             </div>
           </div>
         </div>
@@ -48,27 +47,29 @@ get_header(); ?>
         <div class="slide slideResize slide3" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-3.jpg);">
           <div class="container">
             <div class="common-inner slide-inner3">
-        
-              <span class="h1 from-bottom">luxury spa resort</span><br>
-              <span class="h4 from-bottom">The real place of Mindfullness & Healthy body</span><br>
-              <a target="_blank" href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">Buy Now</a>
+             
+              <span class="h1 from-bottom">Hairlfie</span><br>
+              <span class="h4 from-bottom">Your hair is 90 % of your selfie</span><br>
+               <a href="#pricelist" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
             </div>
           </div>
         </div>
 
         <!-- Slide Four -->
-        <div class="slide slideResize slide4" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-4.jpg);">
+          <div class="slide slideResize slide3" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-4.jpg);">
           <div class="container">
-            <div class="common-inner slide-inner4">
-              <span class="h1 from-bottom">luxury spa resort</span><br>
-              <span class="h4 from-bottom">The real place of Mindfullness & Healthy body</span><br>
-              <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
+            <div class="common-inner slide-inner3">
+            
+              <span class="h1 from-bottom">Beauty is about enhancing what you have.</span><br>
+              <span class="h4 from-bottom">TLet yourself shine through!!</span><br>
+               <a href="#appoinmentModal" class="btn btn-primary first-btn waves-effect waves-light scale-up">Book Now</a>
             </div>
           </div>
         </div>
 
       </div>
     </section>
+
 
 
     
