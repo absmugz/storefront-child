@@ -61,7 +61,7 @@ get_header(); ?>
             <div class="common-inner slide-inner3">
             
               <span class="h1 from-bottom">Beauty is about enhancing what you have.</span><br>
-              <span class="h4 from-bottom">TLet yourself shine through!!</span><br>
+              <span class="h4 from-bottom">Let yourself shine through!!</span><br>
                <a href="#appoinmentModal" class="btn btn-primary first-btn waves-effect waves-light scale-up">Book Now</a>
             </div>
           </div>
