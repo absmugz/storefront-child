@@ -159,12 +159,12 @@ add_action( 'init', 'remove_sf_actions' );
                <li>
                 <a href="<?php bloginfo('url');?>/#gallery" class="scrolling">Gallery</a>
               </li>
-              <li>
+              <!--<li>
                 <a href="<?php bloginfo('url');?>/blog/">Blog</a>
               </li>
               <li>
                 <a href="<?php bloginfo('url');?>/shop/">Shop</a>
-              </li>
+              </li>-->
             
             
           <!-- Cart button -->
