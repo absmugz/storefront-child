@@ -834,7 +834,7 @@ $terms = get_terms( 'service', array(
     
 
 <!-- CONTACT US SECTION -->
-    <section class="clearfix contactSection">
+    <section class="clearfix contactSection" id="contact">
       <div class="container">
         <div class="secotionTitle">
           <h2><span>Hurry </span>Contact us</h2>

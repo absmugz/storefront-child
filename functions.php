@@ -159,19 +159,16 @@ add_action( 'init', 'remove_sf_actions' );
                <li>
                 <a href="<?php bloginfo('url');?>/#gallery" class="scrolling">Gallery</a>
               </li>
-              <!--<li>
-                <a href="<?php bloginfo('url');?>/blog/">Blog</a>
+              
+               <li>
+                <a href="<?php bloginfo('url');?>/#contact" class="scrolling">Contact Us</a>
               </li>
-              <li>
-                <a href="<?php bloginfo('url');?>/shop/">Shop</a>
-              </li>-->
+              
+             
             
             
-          <!-- Cart button -->
-          <div class="cart_btn">
-           <a href="<?php bloginfo('url');?>/shop/"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="badge">0</span></a>
-          </div>
-
+         
+         
         </div>
       </nav><!-- #site-navigation -->
 		<?php
