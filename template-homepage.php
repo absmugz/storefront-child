@@ -24,7 +24,7 @@ get_header(); ?>
           <div class="container">
             <div class="common-inner slide-inner3">
             
-              <span class="h1 from-bottom">Perfect hair</span><br>
+              <span class="h1 from-bottom">Perfection</span><br>
               <span class="h4 from-bottom">Life isn't perfect, but your hair can be</span><br>
               <a href="#pricelist" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
             </div>
@@ -36,7 +36,7 @@ get_header(); ?>
           <div class="container">
             <div class="common-inner slide-inner3">
           
-              <span class="h1 from-bottom">Hair-Vestment</span><br>
+              <span class="h1 from-bottom">Tender Loving Care</span><br>
               <span class="h4 from-bottom">Invest in your hair, you wear it everyday</span><br>
               <a href="#appoinmentModal" class="btn btn-primary first-btn waves-effect waves-light scale-up">Book Now</a>
             </div>
@@ -48,7 +48,7 @@ get_header(); ?>
           <div class="container">
             <div class="common-inner slide-inner3">
              
-              <span class="h1 from-bottom">Hairlfie</span><br>
+              <span class="h1 from-bottom">Helfie</span><br>
               <span class="h4 from-bottom">Your hair is 90 % of your selfie</span><br>
                <a href="#pricelist" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
             </div>
