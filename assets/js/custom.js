@@ -81,6 +81,7 @@ jQuery(document).ready(function($) {
 
       $(this).owlCarousel({
         items: 1,
+        autoHeight: true,
         loop: loop,
         margin: 0,
         nav: true,

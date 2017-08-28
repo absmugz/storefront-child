@@ -16,20 +16,19 @@ get_header(); ?>
 
 
 <!-- MAIN SLIDER -->
+
+
     <section class="main-slider" data-loop="true" data-autoplay="true" data-interval="7000">
       <div class="inner">
 
         <!-- Slide One -->
-        
-        
-       
-        
         <div class="slide slideResize slide1" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-1.jpg);">
+          
           <div class="container">
             <div class="slide-inner1 common-inner">
-              <span class="h1 from-bottom">Home of Hair & Beauty</span><br>
-              <span class="h4 from-bottom">The best place to braid your hair.</span><br>
-              <a href="#pricelist" class="btn btn-primary first-btn waves-effect waves-light scale-up">View Prices</a>
+              <span class="h1 from-bottom">luxury spa resort</span><br>
+              <span class="h4 from-bottom">The real place of Mindfullness & Healthy body</span><br>
+              <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
             </div>
           </div>
         </div>
@@ -38,9 +37,9 @@ get_header(); ?>
         <div class="slide slideResize slide2" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-2.jpg);">
           <div class="container">
             <div class="slide-inner2 common-inner">
-               <span class="h1 from-bottom">Weaves & Wigs</span><br>
-              <span class="h4 from-bottom">The best place to install your weave.</span><br>
-              <a href="#pricelist" class="btn btn-primary first-btn waves-effect waves-light scale-up">View Prices</a>
+              <span class="h1 from-bottom">luxury spa resort</span><br>
+              <span class="h4 from-bottom">The real place of Mindfullness & Healthy body</span><br>
+              <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
             </div>
           </div>
         </div>
@@ -49,27 +48,28 @@ get_header(); ?>
         <div class="slide slideResize slide3" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-3.jpg);">
           <div class="container">
             <div class="common-inner slide-inner3">
-              <img src="img/favicon.png" alt="Logo Icon" class="img-responsive">
-              <span class="h1 from-bottom">Cornrows</span><br>
-              <span class="h4 from-bottom">We offer a variety of cornrow styles.</span><br>
-              <a href="#pricelist" class="btn btn-primary first-btn waves-effect waves-light scale-up">View Prices</a>
+        
+              <span class="h1 from-bottom">luxury spa resort</span><br>
+              <span class="h4 from-bottom">The real place of Mindfullness & Healthy body</span><br>
+              <a target="_blank" href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">Buy Now</a>
             </div>
           </div>
         </div>
 
-        <!-- Slide Four
+        <!-- Slide Four -->
         <div class="slide slideResize slide4" style="background-image: url(http://allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/home/home-slider-4.jpg);">
           <div class="container">
             <div class="common-inner slide-inner4">
-              <span class="h1 from-bottom">Cornrows</span><br>
-              <span class="h4 from-bottom">We offer a variety of cornrow styles</span><br>
-              <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">View Prices</a>
+              <span class="h1 from-bottom">luxury spa resort</span><br>
+              <span class="h4 from-bottom">The real place of Mindfullness & Healthy body</span><br>
+              <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up">More Details</a>
             </div>
           </div>
-        </div>-->
+        </div>
 
       </div>
     </section>
+
 
     
 
