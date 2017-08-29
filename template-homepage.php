@@ -38,7 +38,7 @@ get_header(); ?>
           
               <span class="h1 from-bottom">Tender Loving Care</span><br>
               <span class="h4 from-bottom">Invest in your hair, you wear it everyday</span><br>
-              <a href="#appoinmentModal" class="btn btn-primary first-btn waves-effect waves-light scale-up">Book Now</a>
+              <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up" data-toggle="modal" data-target="#appoinmentModal">Make An Appoinment</a>
             </div>
           </div>
         </div>
@@ -62,7 +62,8 @@ get_header(); ?>
             
               <span class="h1 from-bottom">Beauty is about enhancing what you have.</span><br>
               <span class="h4 from-bottom">Let yourself shine through!!</span><br>
-               <a href="#appoinmentModal" class="btn btn-primary first-btn waves-effect waves-light scale-up">Book Now</a>
+               <a href="#" class="btn btn-primary first-btn waves-effect waves-light scale-up" data-toggle="modal" data-target="#appoinmentModal">Make An Appoinment</a>
+          
             </div>
           </div>
         </div>
@@ -841,9 +842,10 @@ $terms = get_terms( 'service', array(
           <h2><span>Hurry </span>Contact us</h2>
         </div>
         
-         <div class="row">
+        
+           <div class="row">
          <div class="col-md-12 text-center">
-          <div id="success"></div></div>
+          <div id="contactsuccess"></div></div>
           </div>
                             
                             
@@ -970,8 +972,10 @@ $terms = get_terms( 'service', array(
          <div class="col-md-12 text-center">
           <div id="appointmentsuccess"></div></div>
           </div>
+          
+           
                    
-  <form action="<?php the_permalink(); ?>" id="appointmentForm" method="post">
+  <form id="appointmentForm" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>">
             <div class="form-group categoryTitle">
               <h5>Service Date and Time</h5>
             </div>
@@ -1047,6 +1051,10 @@ $terms = get_terms( 'service', array(
             <div class="form-group">
               <textarea class="form-control" placeholder="Your Notes to us for your appointment" name="notes"></textarea>
             </div>
+            
+             <!-- Hidden value added for WordPress ajax security and to validate function name -->
+				        <input type="hidden" name="action" value="custom_action_appointment">
+				        
             <div class="form-group">
             <button type="submit" class="btn btn-primary first-btn">Book Now</button>
           </div>

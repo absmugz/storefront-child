@@ -211,9 +211,8 @@ $('html, body').stop().animate({
 
 //$("#appointmentForm input").jqBootstrapValidation();
 
-
-    $('#contactForm').formValidation({
-        framework: 'bootstrap',
+$('#contactForm').formValidation({
+         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -268,36 +267,33 @@ $('html, body').stop().animate({
                 fv    = $form.data('formValidation');
 
             // Use Ajax to submit form data
-           $.ajax({
-                //url: $form.attr('action'),
-                //type: 'POST',
-                //data: $form.serialize(),
+            $.ajax({
+                url:$('#contactForm').attr('action'),
                 type: 'POST',
-                url: $form.attr('action'),
-			    data: $form.serialize(),
-			    dataType: 'json',
+                data: $form.serialize(),
                 success: function(result) {
-                  
-                  console.log( $form.serialize() );
+                    
+                    console.log( $form.serialize() );
                   
                   $('#contactForm').data('formValidation').resetForm();
                   
                     // ... Process the result ...
                     // Success message
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                 $('#contactsuccess').html("<div class='alert alert-success'>");
+                    $('#contactsuccess > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-success')
+                    $('#contactsuccess > .alert-success')
                         .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
+                    $('#contactsuccess > .alert-success')
                         .append('</div>');
-                        
-                    
+
 
                 }
             });
         });
 
+
+    
   //============================== DATE-PICKER =========================
   
   /*$('.datepicker').datepicker({
@@ -440,6 +436,8 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
                 type: 'POST',
                 data: $form.serialize(),
                 success: function(result) {
+                    
+                    console.log( $form.serialize() );
                   
                   $('#appointmentForm').data('formValidation').resetForm();
                   

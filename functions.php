@@ -99,6 +99,10 @@ add_action('wp_enqueue_scripts', 'allure_scripts');
 // Register Custom Navigation Walker
 require_once('wp-bootstrap-navwalker.php');
 
+// Mandrill emails
+require_once 'mandrill-api-php/src/Mandrill.php'; //Not required with Composer
+$mandrill = new Mandrill('GoiHkVVqZH06bKqZ6Enpmg');
+
 
 //Remove the search box and storefront site branding from the header of WooThemes Storefront theme
 
@@ -198,6 +202,44 @@ function custom_action() {
   $name = $_POST['firstName'];
   $email = $_POST['email'];
   $message = $_POST['message'];
+
+
+  //php mailer variables
+  $to = get_option('admin_email');
+  $subject = "Someone sent a message from ".get_bloginfo('name');
+  $headers = 'From: '. $email . "\r\n" .
+    'Reply-To: ' . $email . "\r\n";
+}
+
+//Appointment form
+
+add_action( 'wp_ajax_custom_action_appointment', 'custom_action_appointment' );
+add_action( 'wp_ajax_nopriv_custom_action_appointment', 'custom_action_appointment' );
+function custom_action_appointment() {
+    if ( 
+        ! isset( $_POST['name_of_nonce_field'] ) 
+        || ! wp_verify_nonce( $_POST['name_of_nonce_field'], 'custom_action_appointment_nonce') 
+    ) {
+ 
+        exit('The form is not valid');
+ 
+    }
+ 
+    // ... Processing further
+    
+    //user posted variables
+    
+   
+
+
+  $date = $_POST['startdate'];
+  $time = $_POST['guiest_id1'];
+  $style = $_POST['style'];
+  $stylist = $_POST['stylist'];
+  
+  $name = $_POST['firstName'];
+  $email = $_POST['email'];
+  $message = $_POST['notes'];
 
 
   //php mailer variables
