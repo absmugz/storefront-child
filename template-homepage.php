@@ -273,7 +273,7 @@ $terms = get_terms( 'service', array(
                           
                           <h3>Singles</h3>
                     
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
 
@@ -337,7 +337,7 @@ $terms = get_terms( 'service', array(
                           
                           <h3>Hair, Haircuts & Other</h3>
                         
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
                       
@@ -403,7 +403,7 @@ $terms = get_terms( 'service', array(
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-dreadlocks.jpg" alt="Dreadlocks or Faux Locs or Marley Hair" class="img-responsive">
                           <h3>Dreadlocks / Faux Locs / marley</h3>
                           
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                          <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
                       
@@ -466,7 +466,7 @@ $terms = get_terms( 'service', array(
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-cornrows.jpg" alt="Cornrows" class="img-responsive">
                           <h3>Cornrows</h3>
                        
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
                       
@@ -533,7 +533,7 @@ $terms = get_terms( 'service', array(
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-nails.jpg" alt="Nails" class="img-responsive">
                           <h3>Nails</h3>
                        
-                          <a href="#" class="btn btn-primary first-btn">make An Appoinment</a>
+                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
                       
