@@ -180,62 +180,25 @@ add_action( 'init', 'remove_sf_actions' );
 	
 	
 //Processing my forms
+add_action( 'wp_ajax_custom_action', 'prefix_ajax_custom_action' );
 
-add_action( 'wp_ajax_custom_action', 'custom_action' );
-add_action( 'wp_ajax_nopriv_custom_action', 'custom_action' );
-function custom_action() {
-    if ( 
-        ! isset( $_POST['name_of_nonce_field'] ) 
-        || ! wp_verify_nonce( $_POST['name_of_nonce_field'], 'custom_action_nonce') 
-    ) {
- 
-        exit('The form is not valid');
- 
-    }
- 
-    // ... Processing further
-    
-    //user posted variables
-    
-   
-    
+function prefix_ajax_custom_action() {
+    // Handle request then generate response using WP_Ajax_Response
   $name = $_POST['firstName'];
   $email = $_POST['email'];
   $form_message = $_POST['message'];
 
-
 $to = $email;
-$subject = 'Contact confirmation';
-$headers = array('Content-Type: text/html; charset=UTF-8','From: Allure Hair & Beauty <info@allurestudio.co.za'); 
-// To send HTML mail, the Content-type header must be set
-//$headers  = 'MIME-Version: 1.0' . "\r\n";
-//$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$subject = 'The subject';
+$body = 'The email body content';
+$headers = array('Content-Type: text/html; charset=UTF-8');
  
-// Create email headers
-//$headers .= 'From: '.$from."\r\n".
-    //'CC: '.$from."\r\n". 
-    //'Reply-To: '.$from."\r\n" .
-    //'X-Mailer: PHP/' . phpversion();
+wp_mail( $to, $subject, $body, $headers );
 
- 
-// Compose a simple HTML email message
-$message = '<html><body>';
-$message .= '<img src="https://www.allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/logo.png" alt="Allure Hair & Beauty" />';
-$message .= '<h1>Thank you for your contacting us.</h1><br>';
-$message .= '<h6>We will get hold of you shortly, Here are your details below :</h6><br>';
-$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
-$message .= "<tr><td><strong>Email:</strong> </td><td>" . $email . "</td></tr>";
-$message .= "<tr><td><strong>Message:</strong> </td><td>" . $form_message . "</td></tr>";
-$message .= "</table>";
-$message .= "</body></html>";
-
-
-wp_mail($to, $subject, $body, $headers);
-    
-    
-    
+    // Don't forget to stop execution afterward.
+    wp_die();
 }
+
 
 //Appointment form
 
