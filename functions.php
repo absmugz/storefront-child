@@ -201,44 +201,37 @@ function custom_action() {
     
   $name = $_POST['firstName'];
   $email = $_POST['email'];
-  $message = $_POST['message'];
+  $form_message = $_POST['message'];
 
 
-$message = array(
-    'subject' => 'My subject',
-    'from_email' => 'info@allurestudio.co.za',
-    'to' => array(array('email' => 'absmugz09@gmail.com', 'name' => 'Absolom')),
-    'merge_vars' => array(array(
-        'rcpt' => 'absmugz09@gmail.com',
-        'vars' =>
-        array(
-            array(
-                'name' => 'FIRSTNAME',
-                'content' => 'Recipient 1 first name'),
-            array(
-                'name' => 'LASTNAME',
-                'content' => 'Last name')
-    ))));
+$to = $email;
+$subject = 'Contact confirmation';
+$from = 'info@allurestudio.co.za';
+ 
+// To send HTML mail, the Content-type header must be set
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+ 
+// Create email headers
+$headers .= 'From: '.$from."\r\n".
+    'CC: '.$from."\r\n". 
+    'Reply-To: '.$from."\r\n" .
+    'X-Mailer: PHP/' . phpversion();
 
-$template_name = 'customer-booking-confirmation';
+ 
+// Compose a simple HTML email message
+$message = '<html><body>';
+$message .= '<img src="https://www.allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/logo.png" alt="Allure Hair & Beauty" />';
+$message .= '<h1>Thank you for your contacting us.</h1><br>';
+$message .= '<h6>We will get hold of you shortly, Here are your details below :</h6><br>';
+$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
+$message .= "<tr><td><strong>Email:</strong> </td><td>" . $email . "</td></tr>";
+$message .= "<tr><td><strong>Message:</strong> </td><td>" . $form_message . "</td></tr>";
+$message .= "</table>";
+$message .= "</body></html>";
 
-$template_content = array(
-    array(
-        'name' => 'main',
-        'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
-    array(
-        'name' => 'footer',
-        'content' => 'Copyright 2017.')
-
-);
-
-$response = $mandrill->messages->sendTemplate($template_name, $template_content, $message);
-
-  //php mailer variables
-  $to = get_option('admin_email');
-  $subject = "Someone sent a message from ".get_bloginfo('name');
-  $headers = 'From: '. $email . "\r\n" .
-    'Reply-To: ' . $email . "\r\n";
+mail($to, $subject, $message, $headers);
     
     
     
@@ -272,16 +265,41 @@ function custom_action_appointment() {
   
   $name = $_POST['firstName'];
   $email = $_POST['email'];
-  $message = $_POST['notes'];
+  $notes = $_POST['notes'];
 
 
-  //php mailer variables
-  $to = get_option('admin_email');
-  $subject = "Someone sent a message from ".get_bloginfo('name');
-  $headers = 'From: '. $email . "\r\n" .
-    'Reply-To: ' . $email . "\r\n";
-    
-    
+$to = $email;
+$subject = 'Booking confirmation';
+$from = 'info@allurestudio.co.za';
+ 
+// To send HTML mail, the Content-type header must be set
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+ 
+// Create email headers
+$headers .= 'From: '.$from."\r\n".
+    'CC: '.$from."\r\n". 
+    'Reply-To: '.$from."\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+ 
+// Compose a simple HTML email message
+$message = '<html><body>';
+$message .= '<img src="https://www.allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/logo.png" alt="Allure Hair & Beauty" />';
+$message .= '<h1>Thank you for your booking.</h1><br>';
+$message .= '<h6>Here are your details below :</h6><br>';
+$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
+$message .= "<tr><td><strong>Email:</strong> </td><td>" . $email . "</td></tr>";
+$message .= "<tr><td><strong>Date of Appointment:</strong> </td><td>" .  $date . "</td></tr>";
+$message .= "<tr><td><strong>Time:</strong> </td><td>" . $time . "</td></tr>";
+$message .= "<tr><td><strong>Style:</strong> </td><td>" . $style . "</td></tr>";
+$message .= "<tr><td><strong>Stylist:</strong> </td><td>" . $stylist . "</td></tr>";
+$message .= "<tr><td><strong>Notes:</strong> </td><td>" . $notes . "</td></tr>";
+$message .= "</table>";
+$message .= "</body></html>";
+
+mail($to, $subject, $message, $headers);
     
     
 }
