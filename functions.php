@@ -204,11 +204,44 @@ function custom_action() {
   $message = $_POST['message'];
 
 
+$message = array(
+    'subject' => 'My subject',
+    'from_email' => 'info@allurestudio.co.za',
+    'to' => array(array('email' => 'absmugz09@gmail.com', 'name' => 'Absolom')),
+    'merge_vars' => array(array(
+        'rcpt' => 'absmugz09@gmail.com',
+        'vars' =>
+        array(
+            array(
+                'name' => 'FIRSTNAME',
+                'content' => 'Recipient 1 first name'),
+            array(
+                'name' => 'LASTNAME',
+                'content' => 'Last name')
+    ))));
+
+$template_name = 'customer-booking-confirmation';
+
+$template_content = array(
+    array(
+        'name' => 'main',
+        'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
+    array(
+        'name' => 'footer',
+        'content' => 'Copyright 2017.')
+
+);
+
+$response = $mandrill->messages->sendTemplate($template_name, $template_content, $message);
+
   //php mailer variables
   $to = get_option('admin_email');
   $subject = "Someone sent a message from ".get_bloginfo('name');
   $headers = 'From: '. $email . "\r\n" .
     'Reply-To: ' . $email . "\r\n";
+    
+    
+    
 }
 
 //Appointment form
@@ -247,6 +280,10 @@ function custom_action_appointment() {
   $subject = "Someone sent a message from ".get_bloginfo('name');
   $headers = 'From: '. $email . "\r\n" .
     'Reply-To: ' . $email . "\r\n";
+    
+    
+    
+    
 }
 
 
