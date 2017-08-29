@@ -206,17 +206,16 @@ function custom_action() {
 
 $to = $email;
 $subject = 'Contact confirmation';
-$from = 'info@allurestudio.co.za';
- 
+$headers = array('Content-Type: text/html; charset=UTF-8','From: Allure Hair & Beauty <info@allurestudio.co.za'); 
 // To send HTML mail, the Content-type header must be set
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+//$headers  = 'MIME-Version: 1.0' . "\r\n";
+//$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
  
 // Create email headers
-$headers .= 'From: '.$from."\r\n".
-    'CC: '.$from."\r\n". 
-    'Reply-To: '.$from."\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+//$headers .= 'From: '.$from."\r\n".
+    //'CC: '.$from."\r\n". 
+    //'Reply-To: '.$from."\r\n" .
+    //'X-Mailer: PHP/' . phpversion();
 
  
 // Compose a simple HTML email message
@@ -231,7 +230,8 @@ $message .= "<tr><td><strong>Message:</strong> </td><td>" . $form_message . "</t
 $message .= "</table>";
 $message .= "</body></html>";
 
-mail($to, $subject, $message, $headers);
+
+wp_mail($to, $subject, $body, $headers);
     
     
     
@@ -273,16 +273,17 @@ $subject = 'Booking confirmation';
 $from = 'info@allurestudio.co.za';
  
 // To send HTML mail, the Content-type header must be set
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+//$headers  = 'MIME-Version: 1.0' . "\r\n";
+//$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
  
 // Create email headers
-$headers .= 'From: '.$from."\r\n".
-    'CC: '.$from."\r\n". 
-    'Reply-To: '.$from."\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+//$headers .= 'From: '.$from."\r\n".
+ //   'CC: '.$from."\r\n". 
+//    'Reply-To: '.$from."\r\n" .
+//    'X-Mailer: PHP/' . phpversion();
 
- 
+$headers = array('Content-Type: text/html; charset=UTF-8','From: Allure Hair & Beauty <info@allurestudio.co.za'); 
+
 // Compose a simple HTML email message
 $message = '<html><body>';
 $message .= '<img src="https://www.allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/logo.png" alt="Allure Hair & Beauty" />';
@@ -299,7 +300,7 @@ $message .= "<tr><td><strong>Notes:</strong> </td><td>" . $notes . "</td></tr>";
 $message .= "</table>";
 $message .= "</body></html>";
 
-mail($to, $subject, $message, $headers);
+wp_mail($to, $subject, $message, $headers);
     
     
 }
