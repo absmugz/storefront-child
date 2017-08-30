@@ -283,7 +283,7 @@ $('#contactForm').formValidation({
                     $('#contactsuccess > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#contactsuccess > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>Thank you for getting in touch! We will get back to you shortly.</strong>");
                     $('#contactsuccess > .alert-success')
                         .append('</div>');
 
@@ -447,7 +447,7 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
                     $('#appointmentsuccess > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#appointmentsuccess > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>We appreciate your booking. Looking forward to doing your hair. </strong>");
                     $('#appointmentsuccess > .alert-success')
                         .append('</div>');
 

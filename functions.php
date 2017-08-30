@@ -195,107 +195,127 @@ function prefix_ajax_custom_action() {
 $mandrill = new Mandrill('GoiHkVVqZH06bKqZ6Enpmg');
 
 $message = array(
-    'subject' => 'My subject',
+    'subject' => 'Allure Hair & Beauty contact request',
     'from_email' => 'info@allurestudio.co.za',
     'to' => array(array('email' => $email, 'name' => $name)),
+        'headers' => array('Reply-To' => 'info@allurestudio.co.za'),
+        'important' => false,
+        'track_opens' => null,
+        'track_clicks' => null,
+        'auto_text' => null,
+        'auto_html' => null,
+        'inline_css' => null,
+        'url_strip_qs' => null,
+        'preserve_recipients' => null,
+        'view_content_link' => null,
+        'bcc_address' => 'info@allurestudio.co.za',
+        'tracking_domain' => null,
+        'signing_domain' => null,
+        'return_path_domain' => null,
+        'merge' => true,
+        'merge_language' => 'mailchimp',
+    
+    
+    
     'merge_vars' => array(array(
         'rcpt' => 'absmugz09@gmail.com',
         'vars' =>
         array(
             array(
                 'name' => 'FIRSTNAME',
-                'content' => 'Recipient 1 first name'),
+                'content' => $name),
             array(
-                'name' => 'LASTNAME',
-                'content' => 'Last name')
-    ))));
+                'name' => 'MESSAGE',
+                'content' => $form_message)
+    )
+    )));
 
-$template_name = 'customer-booking-confirmation';
+$template_name = 'contact-form';
 
-$template_content = array(
-    array(
-        'name' => 'main',
-        'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
-    array(
-        'name' => 'footer',
-        'content' => 'Copyright 2017.')
 
-);
 
 $response = $mandrill->messages->sendTemplate($template_name, $template_content, $message);
 //print_r($response);
-
-
- 
     
 }
 
 
 //Appointment form
 
-add_action( 'wp_ajax_custom_action_appointment', 'custom_action_appointment' );
-add_action( 'wp_ajax_nopriv_custom_action_appointment', 'custom_action_appointment' );
-function custom_action_appointment() {
-    if ( 
-        ! isset( $_POST['name_of_nonce_field'] ) 
-        || ! wp_verify_nonce( $_POST['name_of_nonce_field'], 'custom_action_appointment_nonce') 
-    ) {
- 
-        exit('The form is not valid');
- 
-    }
- 
-    // ... Processing further
-    
-    //user posted variables
-    
-   
 
+add_action( 'wp_ajax_custom_action_appointment', 'prefix_ajax_custom_action_appointment' );
 
-  $date = $_POST['startdate'];
+function prefix_ajax_custom_action_appointment() {
+    // Handle request then generate response using WP_Ajax_Response
+      $name = $_POST['firstName'];
+  $email = $_POST['email'];
+$date = $_POST['startdate'];
   $time = $_POST['guiest_id1'];
   $style = $_POST['style'];
   $stylist = $_POST['stylist'];
   
-  $name = $_POST['firstName'];
-  $email = $_POST['email'];
+
   $notes = $_POST['notes'];
 
+//$mandrill = new Mandrill('GoiHkVVqZH06bKqZ6Enpmg');
 
-$to = $email;
-$subject = 'Booking confirmation';
-$from = 'info@allurestudio.co.za';
- 
-// To send HTML mail, the Content-type header must be set
-//$headers  = 'MIME-Version: 1.0' . "\r\n";
-//$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
- 
-// Create email headers
-//$headers .= 'From: '.$from."\r\n".
- //   'CC: '.$from."\r\n". 
-//    'Reply-To: '.$from."\r\n" .
-//    'X-Mailer: PHP/' . phpversion();
 
-$headers = array('Content-Type: text/html; charset=UTF-8','From: Allure Hair & Beauty <info@allurestudio.co.za'); 
+$mandrill = new Mandrill('GoiHkVVqZH06bKqZ6Enpmg');
 
-// Compose a simple HTML email message
-$message = '<html><body>';
-$message .= '<img src="https://www.allurestudio.co.za/revamp/wp-content/themes/storefront-child/assets/img/logo.png" alt="Allure Hair & Beauty" />';
-$message .= '<h1>Thank you for your booking.</h1><br>';
-$message .= '<h6>Here are your details below :</h6><br>';
-$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
-$message .= "<tr><td><strong>Email:</strong> </td><td>" . $email . "</td></tr>";
-$message .= "<tr><td><strong>Date of Appointment:</strong> </td><td>" .  $date . "</td></tr>";
-$message .= "<tr><td><strong>Time:</strong> </td><td>" . $time . "</td></tr>";
-$message .= "<tr><td><strong>Style:</strong> </td><td>" . $style . "</td></tr>";
-$message .= "<tr><td><strong>Stylist:</strong> </td><td>" . $stylist . "</td></tr>";
-$message .= "<tr><td><strong>Notes:</strong> </td><td>" . $notes . "</td></tr>";
-$message .= "</table>";
-$message .= "</body></html>";
-
-wp_mail($to, $subject, $message, $headers);
+$message = array(
+    'subject' => 'Allure Hair & Beauty appointment',
+    'from_email' => 'info@allurestudio.co.za',
+    'to' => array(array('email' => $email, 'name' => $name)),
+        'headers' => array('Reply-To' => 'info@allurestudio.co.za'),
+        'important' => false,
+        'track_opens' => null,
+        'track_clicks' => null,
+        'auto_text' => null,
+        'auto_html' => null,
+        'inline_css' => null,
+        'url_strip_qs' => null,
+        'preserve_recipients' => null,
+        'view_content_link' => null,
+        'bcc_address' => 'info@allurestudio.co.za',
+        'tracking_domain' => null,
+        'signing_domain' => null,
+        'return_path_domain' => null,
+        'merge' => true,
+        'merge_language' => 'mailchimp',
     
+    
+    
+    'merge_vars' => array(array(
+        'rcpt' => 'absmugz09@gmail.com',
+        'vars' =>
+        array(
+            array(
+                'name' => 'FIRSTNAME',
+                'content' => $name),
+            array(
+                'name' => 'DATE',
+                'content' => $date),
+                array(
+                'name' => 'TIME',
+                'content' => $time),
+                array(
+                'name' => 'STYLE',
+                'content' => $style),
+                array(
+                'name' => 'STYLIST',
+                'content' => $stylist),
+                array(
+                'name' => 'NOTES',
+                'content' => $notes)
+    )
+    )));
+
+$template_name = 'appointment-confirmation';
+
+
+
+$response = $mandrill->messages->sendTemplate($template_name, $template_content, $message);
+//print_r($response);
     
 }
 
