@@ -218,7 +218,7 @@ $message = array(
     
     
     'merge_vars' => array(array(
-        'rcpt' => 'absmugz09@gmail.com',
+        'rcpt' => $email,
         'vars' =>
         array(
             array(
@@ -243,11 +243,16 @@ $response = $mandrill->messages->sendTemplate($template_name, $template_content,
 //Appointment form
 
 
-add_action( 'wp_ajax_custom_action_appointment', 'prefix_ajax_custom_action_appointment' );
+add_action( 'wp_ajax_custom_action_appointment', 'custom_action_appointment' );
 
-function prefix_ajax_custom_action_appointment() {
+
+function custom_action_appointment() {
+
     // Handle request then generate response using WP_Ajax_Response
-      $name = $_POST['firstName'];
+    
+
+
+$name = $_POST['firstName'];
   $email = $_POST['email'];
 $date = $_POST['startdate'];
   $time = $_POST['guiest_id1'];
@@ -286,7 +291,7 @@ $message = array(
     
     
     'merge_vars' => array(array(
-        'rcpt' => 'absmugz09@gmail.com',
+        'rcpt' => $email,
         'vars' =>
         array(
             array(
@@ -312,13 +317,10 @@ $message = array(
 
 $template_name = 'appointment-confirmation';
 
-
-
 $response = $mandrill->messages->sendTemplate($template_name, $template_content, $message);
-//print_r($response);
-    
-}
 
+	wp_die(); // this is required to terminate immediately and return a proper response
+}
 
 
 
