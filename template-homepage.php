@@ -208,7 +208,7 @@ $terms = get_terms( 'service', array(
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">
                          
                           <h3>Weaves & Wigs</h3>
-      
+                           <p><?php the_field('service_description'); ?></p>
                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
@@ -275,7 +275,7 @@ $terms = get_terms( 'service', array(
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-singles.jpg" alt="Singles" class="img-responsive">
                           
                           <h3>Singles</h3>
-                    
+                      <p><?php the_field('service_description'); ?></p>
                            <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
@@ -339,7 +339,7 @@ $terms = get_terms( 'service', array(
                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-hair.jpg" alt="Hair, Haircuts & Other" class="img-responsive">
                           
                           <h3>Hair, Haircuts & Other</h3>
-                        
+                          <p><?php the_field('service_description'); ?></p>
                            <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
@@ -405,7 +405,7 @@ $terms = get_terms( 'service', array(
                         <div class="varietyContent">
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/pricelist-dreadlocks.jpg" alt="Dreadlocks or Faux Locs or Marley Hair" class="img-responsive">
                           <h3>Dreadlocks / Faux Locs / marley</h3>
-                          
+                            <p><?php the_field('service_description'); ?></p>
                           <a href="#" class="btn btn-primary first-btn" data-toggle="modal" data-target="#appoinmentModal">make An Appoinment</a>
                         </div>
                       </div>
