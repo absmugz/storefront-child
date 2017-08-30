@@ -100,8 +100,9 @@ add_action('wp_enqueue_scripts', 'allure_scripts');
 require_once('wp-bootstrap-navwalker.php');
 
 // Mandrill emails
-require_once 'mandrill-api-php/src/Mandrill.php'; //Not required with Composer
-$mandrill = new Mandrill('GoiHkVVqZH06bKqZ6Enpmg');
+
+require_once('mandrill-api-php/src/Mandrill.php');
+
 
 
 //Remove the search box and storefront site branding from the header of WooThemes Storefront theme
@@ -188,15 +189,44 @@ function prefix_ajax_custom_action() {
   $email = $_POST['email'];
   $form_message = $_POST['message'];
 
-$to = 'absmugz09@gmail.com';
-$subject = 'The subject';
-$body = 'The email body content';
-$headers = array('Content-Type: text/html; charset=UTF-8');
- 
-wp_mail( $to, $subject, $body, $headers );
+//$mandrill = new Mandrill('GoiHkVVqZH06bKqZ6Enpmg');
 
-    // Don't forget to stop execution afterward.
-    wp_die();
+
+$mandrill = new Mandrill('GoiHkVVqZH06bKqZ6Enpmg');
+
+$message = array(
+    'subject' => 'My subject',
+    'from_email' => 'info@allurestudio.co.za',
+    'to' => array(array('email' => 'absmugz09@gmail.com', 'name' => 'Absolom')),
+    'merge_vars' => array(array(
+        'rcpt' => 'absmugz09@gmail.com',
+        'vars' =>
+        array(
+            array(
+                'name' => 'FIRSTNAME',
+                'content' => 'Recipient 1 first name'),
+            array(
+                'name' => 'LASTNAME',
+                'content' => 'Last name')
+    ))));
+
+$template_name = 'customer-booking-confirmation';
+
+$template_content = array(
+    array(
+        'name' => 'main',
+        'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
+    array(
+        'name' => 'footer',
+        'content' => 'Copyright 2017.')
+
+);
+
+$response = $mandrill->messages->sendTemplate($template_name, $template_content, $message);
+print_r($response);
+    
+ 
+    
 }
 
 
