@@ -197,7 +197,7 @@ $mandrill = new Mandrill('GoiHkVVqZH06bKqZ6Enpmg');
 $message = array(
     'subject' => 'My subject',
     'from_email' => 'info@allurestudio.co.za',
-    'to' => array(array('email' => 'absmugz09@gmail.com', 'name' => 'Absolom')),
+    'to' => array(array('email' => $email, 'name' => $name)),
     'merge_vars' => array(array(
         'rcpt' => 'absmugz09@gmail.com',
         'vars' =>
@@ -223,8 +223,9 @@ $template_content = array(
 );
 
 $response = $mandrill->messages->sendTemplate($template_name, $template_content, $message);
-print_r($response);
-    
+//print_r($response);
+
+
  
     
 }
