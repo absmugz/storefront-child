@@ -331,7 +331,7 @@ body.bodyColor .bb-fixed-header {
   font-family: 'Open Sans', sans-serif;
   line-height: 15px;
   padding: 12px 0;
-  color: #ffffff;
+  /*color: #ffffff;*/
   font-weight: 700;
   border: none;
   text-transform: uppercase;
@@ -349,7 +349,7 @@ body.bodyColor .bb-fixed-header {
   .btn:focus, .btn.active, .btn:active, .btn:hover {
     border: none;
     outline: 0;
-    color: #ffffff; }
+    /*color: #ffffff;*/ }
 
 .waves-button, .waves-button:hover,
 .waves-button:visited, .waves-button-input {
@@ -3558,7 +3558,7 @@ footer {
         padding-right: 0;
         text-align: center; }
         .cartInfo table tr td .btn:hover, .cartInfo table tr td .btn:focus {
-          color: #ffffff;
+          /*color: #ffffff;*/
           background-color: #ec5598; }
       .cartInfo table tr td span {
         color: #666666;
