@@ -253,8 +253,8 @@ $('#contactForm').formValidation({
                             message: 'The message is required'
                         },
                         stringLength: {
-                            max: 20,
-                            message: 'The message must be less than 20 characters long'
+                            max: 400,
+                            message: 'The message must be less than 400 characters long'
                         }
                     }
                 }
@@ -378,8 +378,8 @@ $('#startdate')    // <=== You forgot to change from #datePicker to #startdate
                             message: 'The message is required'
                         },
                         stringLength: {
-                            max: 20,
-                            message: 'The message must be less than 20 characters long'
+                            max: 400,
+                            message: 'The message must be less than 400 characters long'
                         }
                     }
                 },
