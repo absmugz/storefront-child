@@ -133,8 +133,11 @@ $terms = get_terms( 'service', array(
                    // Define the query
                     $args = array(
                         'post_type' => 'style',
-                        'style' => $term->slug
+                        'style' => $term->slug,
                     );
+                    
+                    //$args = array( 'post_type' => 'style', 'posts_per_page'=>5, 'orderby'=>'title','order'=>'ASC');
+                    
                     $query = new WP_Query( $args );
     
                 	 
