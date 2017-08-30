@@ -188,7 +188,7 @@ function prefix_ajax_custom_action() {
   $email = $_POST['email'];
   $form_message = $_POST['message'];
 
-$to = $email;
+$to = 'absmugz09@gmail.com';
 $subject = 'The subject';
 $body = 'The email body content';
 $headers = array('Content-Type: text/html; charset=UTF-8');
