@@ -679,22 +679,63 @@ $terms = get_terms( 'service', array(
           </div>
         </div>
       </div>
+
       
-      
+    </section>
     
+      
+   <section class="container-fluid clearfix homeGallery">
+      
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="filter-container isotopeFilters">
+
+            
+            <ul class="list-inline filter">
+             <li class="active"><a href="#" data-filter="*">all item</a></li>
+                    <?php 
+                        $terms = get_terms("images_categories"); // get all categories, but you can use any taxonomy
+                        $count = count($terms); //How many are they?
+                        if ( $count > 0 ){  //If there are more than 0 terms
+                            foreach ( $terms as $term ) {  //for each term:
+                                echo "<li><a href='#' data-filter='.".$term->slug."'>" . $term->name . "</a></li>\n";
+                                //create a list item with the current term slug for sorting, and name for label
+                            }
+                        } 
+                    ?>
+                </ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
       <div class="row isotopeContainer" id="container">
-        <div class="col-sm-3 isotopeSelector weaves-wigs">
-          <article class="">
-            <figure>
+        
+         <?php 
+            $terms = get_terms("images_categories"); // get all categories, but you can use any taxonomy
+            $count = count($terms); //How many are they?
+            if ( $count > 0 ){  //If there are more than 0 terms
+            foreach ( $terms as $term ) {  //for each term:
+            
+            $image = get_field('images_category_featured_image', $term->slug);
+
+	echo '<img src="'.$image['url'].'" alt="'.$image['alt'].'" />';
+	
+        echo '<div class="col-sm-3 isotopeSelector weaves-wigs">';
+        echo '<article class="">';
+        echo '<figure>';
               
-             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">
-          
+       echo '<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">';
+            }
+                        } 
+         ?>
               <div class="overlay-background">
                 <div class="inner"></div>
               </div>
               <div class="overlay">
                 
-               
+           
                 <a data-fresco-group='weaves-wigs' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/1.jpg">
                
                   <div class="overlayInfo">
@@ -710,26 +751,10 @@ $terms = get_terms( 'service', array(
           </article>
         </div>
 
-       
-
-
       </div>
-    </section>  
+  </section>  
     
-<?php
-$terms = get_terms('images_categories');
-$count = count($terms);
-if ( $count > 0 ){
-echo '<ul id="projects-filter">';
-echo '<li><a href="#" data-filter="*">All</a></li>';
-foreach ( $terms as $term ) {
-    $termname = strtolower($term->name);  
-    $termname = str_replace(' ', '-', $termname);  
-    echo '<li><a href="#" data-filter="' . '.' . $termname . '">' . $term->name . '</a></li>';
-}
-echo '</ul>';
-}
-?>
+
 
 
 <!-- HOME GALLERY SECTION -->
@@ -771,7 +796,7 @@ echo '</ul>';
               </div>
               <div class="overlay">
                 
-               
+           
                 <a data-fresco-group='weaves-wigs' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/1.jpg">
                
                   <div class="overlayInfo">
@@ -899,6 +924,8 @@ echo '</ul>';
        
 
       </div>
+      
+      
     </section>
 
 <!-- CALL TO ACTION SECTION 
