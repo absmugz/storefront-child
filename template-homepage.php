@@ -646,6 +646,91 @@ $terms = get_terms( 'service', array(
       </div>
     </section>
 -->
+<!-- HOME GALLERY SECTION -->
+    <section class="clearfix homeGalleryTitle" id="gallery">
+      <div class="container">
+        <div class="secotionTitle">
+          <h2><span>Explore </span>Our gallery</h2>
+        </div>
+      </div>
+    </section>
+  
+  
+  
+   <section class="container-fluid clearfix homeGallery">
+      
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="filter-container isotopeFilters">
+            <?php
+            $terms = get_terms('images_categories');
+            $count = count($terms);
+            if ( $count > 0 ){
+            echo '<ul class="list-inline filter">';
+            echo '<li class="active"><a href="#" data-filter="*">all item</a></li>';
+            foreach ( $terms as $term ) {
+                $termname = strtolower($term->name);  
+                $termname = str_replace(' ', '-', $termname);  
+                echo '<li><a href="#" data-filter="' . '.' . $termname . '">' . $term->name . '</a></li>';
+            }
+            echo '</ul>';
+            }
+            ?>
+          </div>
+        </div>
+      </div>
+      
+      
+    
+      <div class="row isotopeContainer" id="container">
+        <div class="col-sm-3 isotopeSelector weaves-wigs">
+          <article class="">
+            <figure>
+              
+             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">
+          
+              <div class="overlay-background">
+                <div class="inner"></div>
+              </div>
+              <div class="overlay">
+                
+               
+                <a data-fresco-group='weaves-wigs' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/1.jpg">
+               
+                  <div class="overlayInfo">
+                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Weaves & Wigs</h5>
+                  </div>
+                </a>
+                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/2.jpg"></a>
+                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/3.jpg"></a>
+                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/4.jpg"></a>
+                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/5.jpg"></a>
+              </div>
+            </figure>
+          </article>
+        </div>
+
+       
+
+
+      </div>
+    </section>  
+    
+<?php
+$terms = get_terms('images_categories');
+$count = count($terms);
+if ( $count > 0 ){
+echo '<ul id="projects-filter">';
+echo '<li><a href="#" data-filter="*">All</a></li>';
+foreach ( $terms as $term ) {
+    $termname = strtolower($term->name);  
+    $termname = str_replace(' ', '-', $termname);  
+    echo '<li><a href="#" data-filter="' . '.' . $termname . '">' . $term->name . '</a></li>';
+}
+echo '</ul>';
+}
+?>
+
 
 <!-- HOME GALLERY SECTION -->
     <section class="clearfix homeGalleryTitle" id="gallery">
