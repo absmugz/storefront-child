@@ -708,48 +708,45 @@ $terms = get_terms( 'service', array(
           </div>
         </div>
       </div>
-      
-      
-      <div class="row isotopeContainer" id="container">
-        
-         <?php 
-            $terms = get_terms("images_categories"); // get all categories, but you can use any taxonomy
-            $count = count($terms); //How many are they?
-            if ( $count > 0 ){  //If there are more than 0 terms
-            foreach ( $terms as $term ) {  //for each term:
-            
-            $image = get_field('images_category_featured_image', $term->slug);
-
-	echo '<img src="'.$image['url'].'" alt="'.$image['alt'].'" />';
-	
-        echo '<div class="col-sm-3 isotopeSelector weaves-wigs">';
-        echo '<article class="">';
-        echo '<figure>';
+   
+<div class="row isotopeContainer" id="container">
+  <?php 
+                        $terms = get_terms("images_categories"); // get all categories, but you can use any taxonomy
+                        $count = count($terms); //How many are they?
+                        if ( $count > 0 ){  //If there are more than 0 terms
+                            foreach ( $terms as $term ) {  //for each term:
+                            
+        echo "<div class='col-sm-3 isotopeSelector ".$term->name."'>";
+          echo '<article class="">';
+            echo '<figure>';
               
-       echo '<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">';
-            }
-                        } 
-         ?>
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
+             echo "<img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-weaves.jpg' alt='".$term->slug."' class='img-responsive'>";
+          
+              echo '<div class="overlay-background">';
+              echo '<div class="inner"></div>';
+              echo '</div>';
+              echo '<div class="overlay">';
                 
            
-                <a data-fresco-group='weaves-wigs' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/1.jpg">
+      echo "<a data-fresco-group='".$term->slug."' class='fancybox-pop fresco' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/1.jpg'>";
                
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Weaves & Wigs</h5>
-                  </div>
-                </a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/2.jpg"></a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/3.jpg"></a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/4.jpg"></a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/5.jpg"></a>
-              </div>
-            </figure>
-          </article>
-        </div>
+     echo '<div class="overlayInfo">';
+     echo "<h5><i class='fa fa-plus' aria-hidden='true'></i> <br>'".$term->slug."'</h5>";
+     echo '</div>';
+     echo '</a>';
+     
+    echo "<a data-fresco-group='".$term->slug."' class='fresco' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/2.jpg'></a>";
+                
+     
+    echo '</div>';
+    echo '</figure>';
+    echo '</article>';
+    echo '</div>';
+                            }
+                        } 
+                    ?>
+    </div>    
+
 
       </div>
   </section>  
