@@ -654,36 +654,7 @@ $terms = get_terms( 'service', array(
         </div>
       </div>
     </section>
-  
-  
-  
-   <section class="container-fluid clearfix homeGallery">
-      
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="filter-container isotopeFilters">
-            <?php
-            $terms = get_terms('images_categories');
-            $count = count($terms);
-            if ( $count > 0 ){
-            echo '<ul class="list-inline filter">';
-            echo '<li class="active"><a href="#" data-filter="*">all item</a></li>';
-            foreach ( $terms as $term ) {
-                $termname = strtolower($term->name);  
-                $termname = str_replace(' ', '-', $termname);  
-                echo '<li><a href="#" data-filter="' . '.' . $termname . '">' . $term->name . '</a></li>';
-            }
-            echo '</ul>';
-            }
-            ?>
-          </div>
-        </div>
-      </div>
-
-      
-    </section>
     
-      
    <section class="container-fluid clearfix homeGallery">
       
       <div class="row">
@@ -710,6 +681,8 @@ $terms = get_terms( 'service', array(
       </div>
    
 <div class="row isotopeContainer" id="container">
+  
+
   <?php 
                         $terms = get_terms("images_categories"); // get all categories, but you can use any taxonomy
                         $count = count($terms); //How many are they?
@@ -719,8 +692,23 @@ $terms = get_terms( 'service', array(
         echo "<div class='col-sm-3 isotopeSelector ".$term->name."'>";
           echo '<article class="">';
             echo '<figure>';
+            
+              // vars
               
-             echo "<img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-weaves.jpg' alt='".$term->slug."' class='img-responsive'>";
+            $category_featured_image = get_field('images_category_featured_image', $term );
+            ///echo $custom_field;
+            
+            //echo '<pre>';
+            //print_r ($category_featured_image['url']);
+
+            //echo '</pre>';
+             
+            
+ 
+// load thumbnail for this taxonomy term (term object)
+
+              
+             echo "<img src='".$category_featured_image['url']."' alt='".$term->slug."' class='img-responsive'>";
           
               echo '<div class="overlay-background">';
               echo '<div class="inner"></div>';
@@ -728,23 +716,61 @@ $terms = get_terms( 'service', array(
               echo '<div class="overlay">';
                 
            
-      echo "<a data-fresco-group='".$term->slug."' class='fancybox-pop fresco' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/1.jpg'>";
+      echo "<a data-fresco-group='".$term->slug."' class='fancybox-pop fresco' href='".$category_featured_image['url']."' alt='".$term->slug."'>";
+     
                
      echo '<div class="overlayInfo">';
-     echo "<h5><i class='fa fa-plus' aria-hidden='true'></i> <br>'".$term->slug."'</h5>";
+     echo "<h5><i class='fa fa-plus' aria-hidden='true'></i> <br>".$term->slug."</h5>";
      echo '</div>';
      echo '</a>';
      
-    echo "<a data-fresco-group='".$term->slug."' class='fresco' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/2.jpg'></a>";
-                
+     // args
+     
+ foreach ( $terms as $term ) :
+    $images_query = new WP_Query( array(
+        'post_type' => 'images',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'images_categories',
+                'field' => 'slug',
+                'terms' => array( $term->slug ),
+                'operator' => 'IN'
+            )
+        )
+    ) );
+    
+  if ($images_query->have_posts()) :
+ while ($images_query->have_posts() ) : $images_query->the_post();
+
+$images = get_field('image');
+
+
+if( !empty($images) ) :
+foreach( $images as $image ) :
+   echo "<a data-fresco-group='".$term->slug."' class='fancybox-pop fresco' href='".$image->url."'></a>";
+endforeach;
+
+endif; 
+
+          
+endwhile;
+endif;
+
+ // Reset things, for good measure
+$images_query = null;
+wp_reset_postdata();
+endforeach;
      
     echo '</div>';
     echo '</figure>';
     echo '</article>';
     echo '</div>';
-                            }
-                        } 
-                    ?>
+    }
+    } 
+    ?>
+    
+       
+                      
     </div>    
 
 
@@ -755,175 +781,7 @@ $terms = get_terms( 'service', array(
 
 
 <!-- HOME GALLERY SECTION -->
-    <section class="clearfix homeGalleryTitle" id="gallery">
-      <div class="container">
-        <div class="secotionTitle">
-          <h2><span>Explore </span>Our gallery</h2>
-        </div>
-      </div>
-    </section>
-    
-    <section class="container-fluid clearfix homeGallery">
-      
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="filter-container isotopeFilters">
-            <ul class="list-inline filter">
-              <li class="active"><a href="#" data-filter="*">all item</a></li>
-              <li><a href="#" data-filter=".weaves-wigs">Weaves & Wigs</a></li>
-              <li><a href="#" data-filter=".singles">Singles</a></li>
-              <li><a href="#" data-filter=".cornrows">Cornrows</a></li>
-              <li><a href="#" data-filter=".dreadlocks">Dreadlocks / Faux locs / Marley</a></li>
-              <li><a href="#" data-filter=".hair">Hair & Hair Cuts</a></li>
-              <li><a href="#" data-filter=".nails">Nails</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row isotopeContainer" id="container">
-        <div class="col-sm-3 isotopeSelector weaves-wigs">
-          <article class="">
-            <figure>
-              
-             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-weaves.jpg" alt="Weaves & Wigs" class="img-responsive">
-          
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-                
-           
-                <a data-fresco-group='weaves-wigs' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/1.jpg">
-               
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Weaves & Wigs</h5>
-                  </div>
-                </a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/2.jpg"></a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/3.jpg"></a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/4.jpg"></a>
-                <a data-fresco-group='weaves-wigs' class="fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/weaves/5.jpg"></a>
-              </div>
-            </figure>
-          </article>
-        </div>
-
-        <div class="col-sm-3 isotopeSelector singles">
-          <article class="">
-            <figure>
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-singles.jpg" alt="Singles" class="img-responsive">
-             
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-               
-                  <a data-fresco-group='singles' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/singles/1.jpg">
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Singles</h5>
-                  </div>
-                </a>
-                <a data-fresco-group='singles' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/singles/2.jpg"></a>
-                <a data-fresco-group='singles' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/singles/3.jpg"></a>
-              </div>
-            </figure>
-          </article>
-        </div>
-
-        <div class="col-sm-3 isotopeSelector cornrows">
-          <article class="">
-            <figure>
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-cornrows.jpg" alt="Cornrows" class="img-responsive">
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-                 <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/1.jpg">
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Cornrows</h5>
-                  </div>
-                </a>
-                 <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/2.jpg"></a>
-                  <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/3.jpg"></a>
-                   <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/4.jpg"></a>
-                    <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/5.jpg"></a>
-                     <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/6.jpg"></a>
-                      <a data-fresco-group='cornrows' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/cornrows/7.jpg"></a>
-              </div>
-            </figure>
-          </article>
-        </div>
-
-        <div class="col-sm-3 isotopeSelector dreadlocks">
-          <article class="">
-            <figure>
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-dreadlocks.jpg" alt="Dreadlocks / Faux locs / Marley" class="img-responsive">
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-                <a data-fresco-group='dreadlocks' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/dreadlocks/1.jpg">
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Dreadlocks / Faux locs / Marley</h5>
-                  </div>
-                </a>
-                 <a data-fresco-group='dreadlocks' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/dreadlocks/2.jpg"></a>
-                 <a data-fresco-group='dreadlocks' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/dreadlocks/3.jpg"></a>
-              </div>
-            </figure>
-          </article>
-        </div>
-
-        <div class="col-sm-3 isotopeSelector hair">
-          <article class="">
-            <figure>
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-hair.jpg" alt="Hair & Hair Cuts" class="img-responsive">
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-                <a data-fresco-group='hair' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/hair/1.jpg">
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Hair & Hair Cuts</h5>
-                  </div>
-                </a>
-                 <a data-fresco-group='hair' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/hair/2.jpg"></a>
-                  <a data-fresco-group='hair' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/hair/3.jpg"></a>
-                   <a data-fresco-group='hair' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/hair/4.jpg"></a>
-              </div>
-            </figure>
-          </article>
-        </div>
-
-        <div class="col-sm-3 isotopeSelector nails">
-          <article class="">
-            <figure>
-               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery-nails.jpg" alt="Hair & Hair Cuts" class="img-responsive">
-              <div class="overlay-background">
-                <div class="inner"></div>
-              </div>
-              <div class="overlay">
-                <a data-fresco-group='nails' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/nails/1.jpg">
-                  <div class="overlayInfo">
-                    <h5><i class="fa fa-plus" aria-hidden="true"></i> <br>Nails</h5>
-                  </div>
-                </a>
-                 
-                  <a data-fresco-group='nails' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/nails/2.jpg"></a>
-                  <a data-fresco-group='nails' class="fancybox-pop fresco" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/home/gallery/nails/3.jpg"></a>
-              </div>
-            </figure>
-          </article>
-        </div>
-
-       
-       
-
-      </div>
-      
-      
-    </section>
+   
 
 <!-- CALL TO ACTION SECTION 
     <section class="clearfix callAction">
